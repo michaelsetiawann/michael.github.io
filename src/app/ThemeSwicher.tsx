@@ -6,35 +6,26 @@ import { MdOutlineDarkMode, MdOutlineLightMode } from "react-icons/md";
 
 export default function ThemeSwicher() {
     const [mounted, setMounted] = useState(false);
-    const { theme, setTheme } = useTheme();
+    const {setTheme, resolvedTheme } = useTheme();
 
     useEffect(() => setMounted(true), []);
 
     if (!mounted) return null;
-
-    const currentTheme = theme === 'system' ? 'dark' : theme;
-    const isDark = currentTheme === 'dark';
+    const isDark = resolvedTheme === 'dark';
 
     return (
-        <div className="flex flex-col items-center mt-4">
-            {isDark ?
+        <div className="flex flex-col items-center">
                 <button
-                    className="bg-black-700 hover:bg-black rounded-md border-purple-400 border-2 p-4"
-                    onClick={() => setTheme('light')}
+                    className="rounded-md border-purple-400 border-2 p-4"
+                    onClick={() => setTheme(isDark ? 'light' : 'dark')}
                 >
-                    <span className="text-4xl">
-                        <MdOutlineDarkMode />
+                    <span className="text-xl">
+                        {
+                            isDark ? <MdOutlineDarkMode /> : <MdOutlineLightMode />
+                        }
                     </span>
                 </button>
-                :
-                <button
-                    className="bg-gray-100 rounded-md border-purple-400 border-2 p-4 hover:bg-gray-300"
-                    onClick={() => setTheme('dark')}
-                >
-                    <span className="text-4xl">
-                        <MdOutlineLightMode />
-                    </span>
-                </button>}
+                
         </div>
     )
 }
