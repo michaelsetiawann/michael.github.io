@@ -8,7 +8,7 @@ const inter = Inter({ subsets: ['latin'] })
 export const metadata: Metadata = {
   metadataBase: new URL('https://glennprays.tech'),
   title: 'Hello!',
-  description: 'glennprays\'s Personal Website',
+  description: 'Hello, i\'m Glenn Pray. Here, you will find a comprehensive collection of my professional journey, including my resume, portfolio, showcased projects, and blog posts.',
 }
 
 export default function RootLayout({
