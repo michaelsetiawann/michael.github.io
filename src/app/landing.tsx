@@ -1,38 +1,14 @@
-'use client'
-import TypewriterComponent from "typewriter-effect";
-import ThemeSwicher from "./ThemeSwicher";
+import { TypingEffect } from "@/components/effect/TypingEffect";
+import { Navigation } from "@/components/header/Navigation";
 
 export default function Landing() {
     // flex flex-col justify-center items-center text-center
     return (
         <>
-            <nav className="absolute py-5 px-8 flex items-center justify-between w-full ">
-                <div className="font-mono font-bold text-3xl">
-                    glennprays;
-                </div>
-                <div className="">
-                    <ThemeSwicher />
-                </div>
-            </nav>
+            <Navigation />
             <div className="min-h-screen flex flex-col justify-center items-center text-center px-5">
-                <h1 className="text-4xl font-mono"><TypingEffect /></h1>
+                <h1 className="text-4xl font-mono"><TypingEffect texts={['This website is currenly under development!']} cursor="_"/></h1>
             </div>
         </>
     )
-}
-
-function TypingEffect() {
-    return (
-        <>
-            <TypewriterComponent
-                options={{
-                    strings: ['This website is currenly under development!'],
-                    autoStart: true,
-                    loop: true,
-                    cursor: '_',
-                    delay: 100,
-                }}
-            />
-        </>
-    );
 }
