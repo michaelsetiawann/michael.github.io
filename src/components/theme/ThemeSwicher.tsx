@@ -4,7 +4,7 @@ import { useTheme } from "next-themes";
 import { useEffect, useState } from "react";
 import { MdOutlineDarkMode, MdOutlineLightMode } from "react-icons/md";
 
-export default function ThemeSwicher() {
+export function ThemeSwicher() {
     const [mounted, setMounted] = useState(false);
     const {setTheme, resolvedTheme } = useTheme();
 
