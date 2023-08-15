@@ -12,7 +12,7 @@ export const metadata : Metadata = {
         description: "This page cound not be found.",
         type: "website",
         siteName: "glennprays.tech",
-        images: [{url:  notFoundImage.src}],
+        images: notFoundImage.src,
     },
     twitter: {
         title: "This page cound not be found.",
