@@ -3,8 +3,10 @@ import Image from 'next/image';
 import Link from 'next/link';
 import notFoundImage from 'public/not-found-image.png';
 
-export const metadata : Metadata = {
-    metadataBase: new URL('https://glennprays.tech'),
+const baseURL = new URL('https://glennprays.tech');
+const notFoundImageURL = new URL(notFoundImage.src, baseURL);
+export const metadata: Metadata = {
+    metadataBase: baseURL,
     title: "This page cound not be found.",
     description: "This page cound not be found.",
     openGraph: {
@@ -12,16 +14,17 @@ export const metadata : Metadata = {
         description: "This page cound not be found.",
         type: "website",
         siteName: "glennprays.tech",
-        images: notFoundImage.src,
+        images: notFoundImageURL.href,
     },
     twitter: {
         title: "This page cound not be found.",
         description: "This page cound not be found.",
         card: "summary_large_image",
         site: "@glennprays",
-        images: notFoundImage.src,
+        images: notFoundImageURL.href,
     }
 }
+
 
 export default async function NotFound() {
     return (
