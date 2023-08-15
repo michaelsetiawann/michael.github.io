@@ -11,8 +11,8 @@ export default function Home() {
           <span className='text-xl font-semibold dark:text-neutral-300 '>Hi, there👋</span>
           <span className='text-7xl font-bold text-amber-500 dark:text-purple-500'>Glenn Pray</span>
           <div className='mt-5 w-10/12 max-lg:w-full'>
-            <p>I'm a undergraduate student of Informatics Engineering at <Link className='hover:text-amber-500 dark:hover:text-purple-500' href=''>Institut Teknologi Harapan Bangsa</Link>. Passionate about technology and specializing in Software Engineering.</p>
-            <p>I'm dedicated to developing my skills and seeking growth opportunities. I approach challenges practically, aiming to enhance my expertise and contribute to the ever-changing tech field.</p>
+            <p>I&apos;m a undergraduate student of Informatics Engineering at <Link className='hover:text-amber-500 dark:hover:text-purple-500' href=''>Institut Teknologi Harapan Bangsa</Link>. Passionate about technology and specializing in Software Engineering.</p>
+            <p>I&apos;m dedicated to developing my skills and seeking growth opportunities. I approach challenges practically, aiming to enhance my expertise and contribute to the ever-changing tech field.</p>
           </div>
         </div>
         <div className='w-80 xl:w-96 flex items-center justify-center '>
