@@ -1,6 +1,6 @@
 import Provider from '@/components/middleware/provider'
 import './globals.css'
-import { Inter, Open_Sans, Poppins } from 'next/font/google'
+import { Poppins } from 'next/font/google'
 import { Navigation } from '@/components/header/Navigation'
 
 const fontFamily = Poppins({ weight: ['100', '200', '400', '500', '600', '700', '800', '900', '300' ], subsets: ['latin']});
