@@ -2,6 +2,7 @@ import Provider from '@/components/middleware/provider'
 import './globals.css'
 import { Poppins } from 'next/font/google'
 import { Navigation } from '@/components/header/Navigation'
+import Footer from '@/components/footer/Footer';
 
 const fontFamily = Poppins({ weight: ['100', '200', '400', '500', '600', '700', '800', '900', '300'], subsets: ['latin'] });
 
@@ -36,6 +37,7 @@ export default function RootLayout({
             <div className='px-8 flex-grow'>
               {children}
             </div>
+            <Footer />
           </div>
         </Provider>
       </body>
