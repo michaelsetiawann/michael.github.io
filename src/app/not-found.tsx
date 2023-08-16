@@ -29,7 +29,7 @@ export default async function NotFound() {
         <>
             <div className='mt-20 flex flex-col items-center justify-center select-none'>
                 <div className='text-5xl flex items-center'>
-                    <span className='font-bold text-amber-500 dark:text-purple-500'>404</span><span className='font-thin ms-5 me-5'>|</span><span className='text-2xl'>Not Found</span>
+                    <span className='font-bold text-cyan-500 dark:text-amber-500'>404</span><span className='font-thin ms-5 me-5'>|</span><span className='text-2xl'>Not Found</span>
                 </div>
                 <button className='mt-5 font-bold px-4 py-1 rounded bg-transparent hover:bg-neutral-950 hover:text-neutral-50 hover:dark:bg-neutral-50 dark:text-neutral-50 hover:dark:text-neutral-950'><Link href='/'>Return home</Link></button>
             </div>
