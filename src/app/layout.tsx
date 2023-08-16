@@ -32,7 +32,7 @@ export default function RootLayout({
     <html lang="en">
       <body className={fontFamily.className}>
         <Provider>
-          <div className='min-h-screen w-full overflow-x-hidden flex flex-col bg-neutral-200 dark:bg-neutral-900'>
+          <div className='min-h-screen w-full overflow-x-hidden flex flex-col bg-neutral-200 dark:bg-neutral-900 pt-24'>
             <Navigation />
             <div className='px-8 flex-grow'>
               {children}

@@ -19,7 +19,7 @@ export default function Home() {
           className='flex flex-col w-full xl:w-8/12'>
           <motion.span
             variants={Motions.fadeIn("left", "tween", 0.04, 0.4)}
-            className='text-xl font-semibold dark:text-neutral-300 '>Hi👋, i&apos;m</motion.span>
+            className='text-xl dark:text-neutral-300 '>Hi👋, i&apos;m</motion.span>
           <motion.span
             variants={Motions.fadeIn("up", "tween", 0.1, 1)}
             className='text-7xl font-bold text-amber-500 dark:text-purple-500'>Glenn Pray</motion.span>
