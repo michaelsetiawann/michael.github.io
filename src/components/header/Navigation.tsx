@@ -27,7 +27,6 @@ export const Navigation = () => {
     }, [prevY])
     return (
         <motion.nav
-            // layout
             initial={{ y: 0 }}
             transition={{
                 duration: 0.23,
@@ -38,6 +37,13 @@ export const Navigation = () => {
             <Link id="logo" href='/' className="font-mono font-bold text-2xl select-none">
                 glennprays;
             </Link>
+            <div className="flex justify-between items-center w-7/12 text-xl max-xl:hidden">
+                <Link href='/' className="hover:text-cyan-600 dark:hover:text-amber-500 hover:underline font-semibold">Home</Link>
+                <Link href='/' className="hover:text-cyan-600 dark:hover:text-amber-500 hover:underline font-semibold">Skills</Link>
+                <Link href='/' className="hover:text-cyan-600 dark:hover:text-amber-500 hover:underline font-semibold">Portfolio</Link>
+                <Link href='/' className="hover:text-cyan-600 dark:hover:text-amber-500 hover:underline font-semibold">Contact</Link>
+                <Link href='/' className="hover:text-cyan-600 dark:hover:text-amber-500 hover:underline font-semibold">Blog</Link>
+            </div>
             <ThemeSwicher />
         </motion.nav>
     )

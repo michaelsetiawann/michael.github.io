@@ -17,13 +17,14 @@ export function ThemeSwicher() {
     const toggleSwitch = () => setTheme(isDark ? 'light' : 'dark');
 
     return (
-        <div id="theme-switcher" className={('w-14 border-black bg-slate-400 rounded-full flex items-center cursor-pointer ' + (isDark ? 'justify-start' : 'justify-end'))} onClick={toggleSwitch}>
+        <div id="theme-switcher" className={('w-9 sm:w-14 border-black bg-slate-400 rounded-full flex items-center cursor-pointer ' + (isDark ? 'justify-start' : 'justify-end'))} onClick={toggleSwitch}>
             <motion.div
-                className="bg-gradient-to-r from-amber-500 via-amber-300 to-amber-200 dark:from-indigo-600 dark:via-purple-600 dark:to-pink-600  w-7 h-7 rounded-full shadow-md flex items-center justify-center"
+                // className="bg-gradient-to-r from-amber-500 via-amber-300 to-amber-200 dark:from-amber-600 dark:via-purple-600 dark:to-pink-600  w-7 h-7 rounded-full shadow-md flex items-center justify-center"
+                className="bg-sky-600 dark:bg-orange-600 w-7 h-7 max-sm:w-9 max-sm:h-9 rounded-full shadow-md flex items-center justify-center max-sm:text-2xl"
                 layout
                 transition={spring}
             >
-                {isDark ? <MdOutlineDarkMode className="text-white" /> : <MdOutlineLightMode className="text-black" />}
+                {isDark ? <MdOutlineDarkMode className="text-white" /> : <MdOutlineLightMode className="text-white" />}
             </motion.div>
         </div>
     )
