@@ -27,7 +27,7 @@ export const metadata: Metadata = {
 export default async function NotFound() {
     return (
         <>
-            <div className='mt-20 flex flex-col items-center justify-center'>
+            <div className='mt-20 flex flex-col items-center justify-center select-none'>
                 <div className='text-5xl flex items-center'>
                     <span className='font-bold text-amber-500 dark:text-purple-500'>404</span><span className='font-thin ms-5 me-5'>|</span><span className='text-2xl'>Not Found</span>
                 </div>
