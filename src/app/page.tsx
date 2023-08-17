@@ -1,6 +1,6 @@
 "use client"
 import Link from 'next/link';
-import photoProfile from 'public/profile-transparent-bg.png';
+import photoProfile from 'public/images/profile-transparent-bg.png';
 import { motion } from "framer-motion";
 import { Motions } from '@/utils/motion';
 import Landing from './landing';

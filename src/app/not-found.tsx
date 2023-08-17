@@ -1,6 +1,6 @@
 import { Metadata } from 'next';
 import Link from 'next/link';
-import notFoundImage from 'public/not-found-image.png';
+import notFoundImage from 'public/images/not-found-image.png';
 
 const baseURL = new URL('https://glennprays.tech');
 const notFoundImageURL = new URL(notFoundImage.src, baseURL);

@@ -3,11 +3,13 @@ import { ThemeSwicher } from "@/components/theme/ThemeSwicher";
 import { motion, useScroll } from "framer-motion";
 import Link from "next/link";
 import { useEffect, useState } from "react";
+import Hamburger from "./Hamburger";
 
 export const Navigation = () => {
-    const [isOnTop, setIsOnTop] = useState(false)
-    const [isScrollingDown, setIsScrollingDown] = useState(false)
+    const [isOnTop, setIsOnTop] = useState(false);
+    const [isScrollingDown, setIsScrollingDown] = useState(false);
     const [prevY, setPrevY] = useState(0);
+    const [isHamburgerOpen, setIsHamburgerOpen] = useState(false);
 
 
     useEffect(() => {
@@ -45,6 +47,7 @@ export const Navigation = () => {
                 <Link href='/' className="hover:text-cyan-600 dark:hover:text-amber-500 hover:underline font-semibold">Blog</Link>
             </div>
             <ThemeSwicher />
+            <Hamburger getOpenStatus={(value : boolean) => setIsHamburgerOpen(value)} />
         </motion.nav>
     )
 };
