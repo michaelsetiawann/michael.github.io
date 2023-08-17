@@ -47,7 +47,7 @@ export default function Home() {
 
         </motion.div>
       </motion.div>
-      <div className='h-screen mt-44 md:mt-52 xl:mt-72'>
+      <div id='test' className='h-screen mt-44 md:mt-52 xl:mt-72'>
         <Landing />
       </div>
     </>
