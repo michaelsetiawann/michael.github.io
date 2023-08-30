@@ -9,6 +9,7 @@ import next from "public/images/icon/stack/next js.svg"
 import tailwind from "public/images/icon/stack/tailwind.svg"
 import bootstrap from "public/images/icon/stack/bootstrap.svg"
 import chakraui from "public/images/icon/stack/chakra-ui.svg"
+import framer from "public/images/icon/stack/framer.svg"
 import mysql from "public/images/icon/stack/mysql.svg"
 import neo4j from "public/images/icon/stack/neo4j.svg"
 import node from "public/images/icon/stack/node js.svg"
@@ -82,6 +83,11 @@ export const stackList : SkillItem[] = [
         name: "Chakra UI",
         icon: chakraui,
         alt: "Chakra UI Icon",
+    },
+    {
+        name: "Framer",
+        icon: framer,
+        alt: "Framer Motion Icon",
     },
     {
         name: "MySQL",
