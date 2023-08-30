@@ -35,7 +35,12 @@ export default function Skills() {
                     </span>
                     <motion.div className="mt-5 grid sm:grid-cols-4 grid-cols-3 gap-4">
                         {stackList.map(({ name, icon, alt }, index) => (
-                            <SkillItem name={name} icon={icon} alt={alt} />
+                            <SkillItem
+                                key={name}
+                                name={name}
+                                icon={icon}
+                                alt={alt}
+                            />
                         ))}
                     </motion.div>
                 </motion.div>
@@ -52,7 +57,12 @@ export default function Skills() {
                     </span>
                     <motion.div className="mt-5 grid sm:grid-cols-4 grid-cols-3 gap-4">
                         {toolsList.map(({ name, icon, alt }, index) => (
-                            <SkillItem name={name} icon={icon} alt={alt} />
+                            <SkillItem
+                                key={name}
+                                name={name}
+                                icon={icon}
+                                alt={alt}
+                            />
                         ))}
                     </motion.div>
                 </motion.div>
