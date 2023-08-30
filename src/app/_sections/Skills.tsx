@@ -8,12 +8,12 @@ import { Motions } from "@/utils/motion";
 
 export default function Skills() {
     return (
-        <motion.div
-            viewport={{ once: true, amount: 0.2 }}
+        <div
             className="container  mx-auto min-h-screen py-20 flex flex-col justify-start items-center gap-3"
             id="skills"
         >
             <motion.h2
+            viewport={{ once: true, amount: 0.2 }}
                 whileInView="show"
                 initial="hidden"
                 className="text-5xl font-bold"
@@ -23,17 +23,18 @@ export default function Skills() {
             </motion.h2>
             <div className="w-full flex flex-col items-center xl:flex-row xl:items-start xl:justify-between gap-10">
                 <motion.div
+                viewport={{ once: true, amount: 0.2 }}
                     whileInView="show"
                     initial="hidden"
                     id="stack"
-                    variants={Motions.fadeIn("left", "tween", 0.4, 0.7)}
+                    variants={Motions.fadeIn("left", "tween", 0.4, 1.1)}
                     className="w-full py-6 md:w-4/5 lg:w-3/5 xl:w-6/12 border shadow-xl border-slate-300 dark:border-zinc-800 rounded-lg flex flex-col items-center "
                 >
                     <span className="text-2xl font-semibold flex items-center">
                         <FaCode />
                         Tech Stack
                     </span>
-                    <motion.div className="mt-5 grid sm:grid-cols-4 grid-cols-3 gap-4">
+                    <div className="mt-5 grid sm:grid-cols-4 grid-cols-3 gap-4">
                         {stackList.map(({ name, icon, alt }, index) => (
                             <SkillItem
                                 key={name}
@@ -42,20 +43,21 @@ export default function Skills() {
                                 alt={alt}
                             />
                         ))}
-                    </motion.div>
+                    </div>
                 </motion.div>
                 <motion.div
+                viewport={{ once: true, amount: 0.2 }}
                     whileInView="show"
                     initial="hidden"
                     id="tools"
-                    variants={Motions.fadeIn("right", "tween", 0.6, 0.7)}
+                    variants={Motions.fadeIn("right", "tween", 0.7, 1.1)}
                     className="w-full py-6 md:w-4/5 lg:w-3/5 xl:w-6/12 border shadow-xl border-slate-300 dark:border-zinc-800 rounded-lg flex flex-col items-center "
                 >
                     <span className="text-2xl font-semibold flex items-center">
                         <FaTools />
                         Tools
                     </span>
-                    <motion.div className="mt-5 grid sm:grid-cols-4 grid-cols-3 gap-4">
+                    <div className="mt-5 grid sm:grid-cols-4 grid-cols-3 gap-4">
                         {toolsList.map(({ name, icon, alt }, index) => (
                             <SkillItem
                                 key={name}
@@ -64,10 +66,10 @@ export default function Skills() {
                                 alt={alt}
                             />
                         ))}
-                    </motion.div>
+                    </div>
                 </motion.div>
             </div>
-        </motion.div>
+        </div>
     );
 }
 
