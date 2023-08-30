@@ -1,10 +1,7 @@
-"use client";
 import Image from "next/image";
 import { FaCode, FaTools } from "react-icons/fa";
 import { stackList, toolsList } from "@/constans/skills";
 import { StaticImport } from "next/dist/shared/lib/get-img-props";
-import { motion } from "framer-motion";
-import { Motions } from "@/utils/motion";
 
 export default function Skills() {
     return (
@@ -12,22 +9,10 @@ export default function Skills() {
             className="container  mx-auto min-h-screen py-20 flex flex-col justify-start items-center gap-3"
             id="skills"
         >
-            <motion.h2
-            viewport={{ once: true, amount: 0.2 }}
-                whileInView="show"
-                initial="hidden"
-                className="text-5xl font-bold"
-                variants={Motions.fadeIn("up", "tween", 0.1, 0.7)}
-            >
-                Skills
-            </motion.h2>
+            <h2 className="text-5xl font-bold">Skills</h2>
             <div className="w-full flex flex-col items-center xl:flex-row xl:items-start xl:justify-between gap-10">
-                <motion.div
-                viewport={{ once: true, amount: 0.2 }}
-                    whileInView="show"
-                    initial="hidden"
+                <div
                     id="stack"
-                    variants={Motions.fadeIn("left", "tween", 0.4, 1.1)}
                     className="w-full py-6 md:w-4/5 lg:w-3/5 xl:w-6/12 border shadow-xl border-slate-300 dark:border-zinc-800 rounded-lg flex flex-col items-center "
                 >
                     <span className="text-2xl font-semibold flex items-center">
@@ -44,13 +29,9 @@ export default function Skills() {
                             />
                         ))}
                     </div>
-                </motion.div>
-                <motion.div
-                viewport={{ once: true, amount: 0.2 }}
-                    whileInView="show"
-                    initial="hidden"
+                </div>
+                <div
                     id="tools"
-                    variants={Motions.fadeIn("right", "tween", 0.7, 1.1)}
                     className="w-full py-6 md:w-4/5 lg:w-3/5 xl:w-6/12 border shadow-xl border-slate-300 dark:border-zinc-800 rounded-lg flex flex-col items-center "
                 >
                     <span className="text-2xl font-semibold flex items-center">
@@ -67,7 +48,7 @@ export default function Skills() {
                             />
                         ))}
                     </div>
-                </motion.div>
+                </div>
             </div>
         </div>
     );
