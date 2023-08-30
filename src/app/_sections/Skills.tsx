@@ -10,12 +10,12 @@ export default function Skills() {
     return (
         <motion.div
             viewport={{ once: false, amount: 0.2 }}
-            whileInView="show"
-            initial="hidden"
             className="container  mx-auto min-h-screen py-20 flex flex-col justify-start items-center gap-3"
             id="skills"
         >
             <motion.h2
+                whileInView="show"
+                initial="hidden"
                 className="text-5xl font-bold"
                 variants={Motions.fadeIn("up", "tween", 0.1, 0.7)}
             >
@@ -29,23 +29,13 @@ export default function Skills() {
                     variants={Motions.fadeIn("left", "tween", 0.4, 0.7)}
                     className="w-full py-6 md:w-4/5 lg:w-3/5 xl:w-6/12 border shadow-xl border-slate-300 dark:border-zinc-800 rounded-lg flex flex-col items-center "
                 >
-                    <motion.span className="text-2xl font-semibold flex items-center">
+                    <span className="text-2xl font-semibold flex items-center">
                         <FaCode />
                         Tech Stack
-                    </motion.span>
+                    </span>
                     <motion.div className="mt-5 grid sm:grid-cols-4 grid-cols-3 gap-4">
                         {stackList.map(({ name, icon, alt }, index) => (
-                            <motion.div
-                                key={name}
-                                variants={Motions.fadeIn(
-                                    "up",
-                                    "tween",
-                                    0.4 + index * 0.05,
-                                    0.2
-                                )}
-                            >
-                                <SkillItem name={name} icon={icon} alt={alt} />
-                            </motion.div>
+                            <SkillItem name={name} icon={icon} alt={alt} />
                         ))}
                     </motion.div>
                 </motion.div>
@@ -56,23 +46,13 @@ export default function Skills() {
                     variants={Motions.fadeIn("right", "tween", 0.6, 0.7)}
                     className="w-full py-6 md:w-4/5 lg:w-3/5 xl:w-6/12 border shadow-xl border-slate-300 dark:border-zinc-800 rounded-lg flex flex-col items-center "
                 >
-                    <motion.span className="text-2xl font-semibold flex items-center">
+                    <span className="text-2xl font-semibold flex items-center">
                         <FaTools />
                         Tools
-                    </motion.span>
+                    </span>
                     <motion.div className="mt-5 grid sm:grid-cols-4 grid-cols-3 gap-4">
                         {toolsList.map(({ name, icon, alt }, index) => (
-                            <motion.div
-                                key={name}
-                                variants={Motions.fadeIn(
-                                    "up",
-                                    "tween",
-                                    0.6 + index * 0.05,
-                                    0.2
-                                )}
-                            >
-                                <SkillItem name={name} icon={icon} alt={alt} />
-                            </motion.div>
+                            <SkillItem name={name} icon={icon} alt={alt} />
                         ))}
                     </motion.div>
                 </motion.div>
