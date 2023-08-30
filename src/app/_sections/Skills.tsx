@@ -65,11 +65,11 @@ const SkillItem = ({
     alt: string;
 }) => {
     return (
-        <div className="w-28 h-28 select-none transition-transform hover:scale-105 flex flex-col items-center justify-center">
-            <div className="p-4 rounded-full bg-neutral-100 dark:bg-neutral-600 shadow-md">
-                <Image src={icon} alt={alt} width={40} height={40} />
+        <div className="w-24 h-24 select-none transition-transform hover:scale-105 flex flex-col items-center justify-center">
+            <div className="p-3 rounded-full bg-neutral-100 dark:bg-neutral-600 shadow-md">
+                <Image src={icon} alt={alt} width={35} height={35} />
             </div>
-            <span className="font-semibold text-lg">{name}</span>
+            <span className="font-semibold text-md">{name}</span>
         </div>
     );
 };
