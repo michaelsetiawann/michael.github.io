@@ -9,7 +9,7 @@ import { Motions } from "@/utils/motion";
 export default function Skills() {
     return (
         <motion.div
-            viewport={{ once: false, amount: 0.2 }}
+            viewport={{ once: true, amount: 0.2 }}
             className="container  mx-auto min-h-screen py-20 flex flex-col justify-start items-center gap-3"
             id="skills"
         >
