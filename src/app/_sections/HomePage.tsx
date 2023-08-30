@@ -10,7 +10,7 @@ export default function HomePage() {
             viewport={{ once: true, amount: 0.55 }}
             whileInView="show"
             initial="hidden"
-            className="container xl:pt-20 sm:w-8/12 mx-auto flex flex-col items-center xl:flex-row">
+            className="container min-h-[calc(100vh-95px)] sm:w-8/12 mx-auto flex flex-col items-center xl:flex-row xl:items-start xl:pt-28">
             <motion.div
                 className='flex flex-col w-full xl:w-8/12'>
                 <motion.span
