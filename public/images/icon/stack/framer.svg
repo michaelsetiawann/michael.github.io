@@ -1,1 +1,19 @@
-<svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" width="1080" zoomAndPan="magnify" viewBox="0 0 810 809.999993" height="1080" preserveAspectRatio="xMidYMid meet" version="1.0"><defs><clipPath id="d37234f7d9"><path d="M 135.167969 270 L 675.167969 270 L 675.167969 540 L 135.167969 540 Z M 135.167969 270 " clip-rule="nonzero"/></clipPath><clipPath id="a7c43f70cc"><path d="M 135.167969 0 L 675.167969 0 L 675.167969 271 L 135.167969 271 Z M 135.167969 0 " clip-rule="nonzero"/></clipPath><clipPath id="a93884cf8b"><path d="M 135.167969 539 L 406 539 L 406 810 L 135.167969 810 Z M 135.167969 539 " clip-rule="nonzero"/></clipPath></defs><g clip-path="url(#d37234f7d9)"><path fill="#24a8ff" d="M 675.167969 539.914062 L 135.167969 539.914062 L 135.167969 270.085938 L 405.167969 270.085938 Z M 675.167969 539.914062 " fill-opacity="1" fill-rule="nonzero"/></g><g clip-path="url(#a7c43f70cc)"><path fill="#8ddcff" d="M 675.167969 0.253906 L 135.167969 0.253906 L 405.167969 270.085938 L 675.167969 270.085938 Z M 675.167969 0.253906 " fill-opacity="1" fill-rule="nonzero"/></g><g clip-path="url(#a93884cf8b)"><path fill="#054eff" d="M 405.167969 539.914062 L 405.167969 809.746094 L 135.167969 539.914062 Z M 405.167969 539.914062 " fill-opacity="1" fill-rule="nonzero"/></g></svg>
+<?xml version="1.0" encoding="UTF-8"?>
+<!-- Uploaded to: SVG Repo, www.svgrepo.com, Generator: SVG Repo Mixer Tools -->
+<svg width="800px" height="800px" viewBox="0 0 73 73" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+    
+    <title>design-and-ux/fluent-design</title>
+    <desc>Created with Sketch.</desc>
+    <defs>
+</defs>
+    <g id="design-and-ux/fluent-design" stroke="none" stroke-width="1" fill="none" fill-rule="evenodd">
+        <g id="container" transform="translate(2.000000, 2.000000)" fill="#FFFFFF" fill-rule="nonzero" stroke="#0A0A0A" stroke-width="2">
+            <rect id="mask" x="-1" y="-1" width="71" height="71" rx="14">
+</rect>
+        </g>
+        <g id="fluent" transform="translate(22.000000, 11.000000)" fill="#000000" fill-rule="nonzero">
+            <polygon id="fluent_01" points="14.7809081 0 0 8.45050462 0 42.2525249 14.7809081 50.7030295 14.7809081 33.8020194 29.561837 25.3515148 14.7809081 16.9010101 29.561837 8.45050462">
+</polygon>
+        </g>
+    </g>
+</svg>

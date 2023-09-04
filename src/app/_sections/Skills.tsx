@@ -6,7 +6,7 @@ import { StaticImport } from "next/dist/shared/lib/get-img-props";
 export default function Skills() {
     return (
         <div
-            className="container  mx-auto min-h-screen py-20 flex flex-col justify-start items-center gap-3"
+            className="container  mx-auto min-h-screen 2xl:py-20 2xl:px-40 flex flex-col justify-start items-center gap-3"
             id="skills"
         >
             <h2 className="text-5xl font-bold">Skills</h2>

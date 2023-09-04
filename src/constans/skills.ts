@@ -22,7 +22,7 @@ import postman from "public/images/icon/tools/postman.svg"
 import docker from "public/images/icon/tools/docker.svg"
 import figma from "public/images/icon/tools/figma.svg"
 import { StaticImport } from "next/dist/shared/lib/get-img-props"
-interface SkillItem {
+export interface SkillItem {
     name: string,
     icon: StaticImport,
     alt: string,
