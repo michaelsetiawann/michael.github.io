@@ -59,7 +59,7 @@ export const portfolioItems: PortfolioItem[] = [
         tumbnail: tixid,
         stacks: getSkillItems(["Golang", "MySQL"]),
         description:
-            "This project aims to develop an application similar to TIX-ID, a well-established platform for booking tickets online.",
+            "This project aims to develop an application similar to TIX-ID, a well-established platform for booking tickets online. The program uses go-gin as the framework, MySQL as the database.",
         url: "https://github.com/glennprays/tix-id",
     },
     {
@@ -67,7 +67,7 @@ export const portfolioItems: PortfolioItem[] = [
         tumbnail: twitterClone,
         stacks: getSkillItems(["Golang", "Neo4j"]),
         description:
-            "This project just a simple implementation of a social media platform similar to Twitter. The API provides several functionalities for a single role, User.",
+            "This project just a simple implementation of a social media platform similar to Twitter. The program uses go-gin as the framework, neo4j as the No-SQL Database (Graph Database)",
         url: "https://github.com/glennprays/twitter-clone-api",
     },
     {
