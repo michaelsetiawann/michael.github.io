@@ -14,7 +14,7 @@ export default function Contact() {
                     {contactList.map((item, index) => {
                         const { name, username, url } = item;
                         return (
-                            <div className="flex w-[305px] py-2 px-2 justify-start gap-3 items-center dark:text-white border shadow border-slate-200 dark:border-zinc-800 rounded-lg bg-neutral-300 dark:bg-neutral-700 transition-transform ">
+                            <div key={name} className="flex w-[305px] py-2 px-2 justify-start gap-3 items-center dark:text-white border shadow border-slate-200 dark:border-zinc-800 rounded-lg bg-neutral-300 dark:bg-neutral-700 transition-transform ">
                                 <span className="text-[45px]">
                                     <item.icon />
                                 </span>
