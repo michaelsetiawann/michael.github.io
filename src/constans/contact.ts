@@ -14,7 +14,7 @@ export const contactList: ContactItem[] = [
     {
         name: "LinkedIn",
         icon: FaLinkedin,
-        username: "linkedin.com/in/glennprays/",
+        username: "linkedin.com/in/glennprays",
         url: "https://www.linkedin.com/in/glennprays/",
     },
     {
