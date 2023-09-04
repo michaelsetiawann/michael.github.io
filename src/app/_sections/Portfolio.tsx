@@ -36,7 +36,7 @@ export default function Portfolio() {
         if (parent && child && !open) {
             setOverflow(parent.clientHeight < child.clientHeight);
         }
-    }, [screenWidth]);
+    }, [screenWidth, open]);
 
     useEffect(() => {
         if (overflow) {

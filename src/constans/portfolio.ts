@@ -73,7 +73,7 @@ export const portfolioItems: PortfolioItem[] = [
     {
         title: "Traffic Sign Detection",
         tumbnail: trafficSignDetection,
-        stacks: getSkillItems(["Golang", "Neo4j"]),
+        stacks: getSkillItems(["Python"]),
         description:
             "This project presents an approach for detecting traffic signs in the unique context of Indonesia's road environment. Leveraging advanced image processing techniques, specifically the Hue-Saturation-Value (HSV) color space and morphological operations.",
         url: "https://github.com/glennprays/traffic-sign-detection",
