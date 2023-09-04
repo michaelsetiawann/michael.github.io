@@ -132,7 +132,7 @@ const PortfolioItemDiv = ({ item }: { item: PortfolioItem }) => {
                     </Link>
                 </div>
             </BackdropModal>
-            <div className="w-[300px] sm:w-[390px] py-7 px-5 sm:px-8 border mx-auto shadow-md border-slate-400 dark:border-zinc-800 dark:shadow-zinc-800 rounded-xl flex flex-col items-center gap-3 cursor-pointer">
+            <div className="w-[295px] sm:w-[390px] py-7 px-5 sm:px-8 border mx-auto shadow-md border-slate-400 dark:border-zinc-800 dark:shadow-zinc-800 rounded-xl flex flex-col items-center gap-3 cursor-pointer">
                 <div className="w-[240px] h-[130px] sm:w-[320px] sm:h-[185px] rounded-md overflow-hidden border-2 border-slate-500 dark:border-zinc-800 relative select-none">
                     <Image src={tumbnail} alt={title} fill />
                 </div>
