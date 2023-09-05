@@ -1,0 +1,1 @@
+export const blogDir : string = 'src/blogs'
