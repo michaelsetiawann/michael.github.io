@@ -47,36 +47,38 @@ export const NavigationBlog = () => {
                 (isOnTop || isHamburgerOpen ? "opacity-100" : "opacity-90")
             }
         >
-            <Link
-                id="logo"
-                href="/blog"
-                className="font-mono font-bold text-2xl select-none"
-            >
-                glennprays;
-                <span className="font-light">
-                    |<span className="font-sans text-xl">Blog</span>
-                </span>
-            </Link>
-            <div
-                className={
-                    "flex gap-7 items-center px-8 md:px-24 xl:px-0 w-7/12 max-xl:w-full text-xl max-xl:absolute max-xl:left-0 max-xl:top-0 max-xl:mt-[76px] transition-all max-xl:overflow-x-hidden max-xl:overflow-y-auto max-xl:bg-inherit max-xl:flex-col max-xl:items-start max-xl:justify-start max-xl:gap-4 " +
-                    (isHamburgerOpen
-                        ? "max-xl:py-5 max-xl:h-[calc(100vh-76px)]"
-                        : "max-xl:h-0 max-xl:py-0")
-                }
-            >
-                {navItemsBlog.map((item) => (
-                    <Link
-                        key={item.name}
-                        href={item.href}
-                        onClick={() => setIsHamburgerOpen(false)}
-                        className={
-                            "hover:text-cyan-600 dark:hover:text-amber-500 hover:underline font-semibold "
-                        }
-                    >
-                        {item.name}
-                    </Link>
-                ))}
+            <div className="flex gap-9 bg-neutral-200 dark:bg-neutral-900">
+                <Link
+                    id="logo"
+                    href="/blog"
+                    className="font-mono font-bold text-2xl select-none"
+                >
+                    glennprays;
+                    <span className="font-light">
+                        |<span className="font-sans text-xl">Blog</span>
+                    </span>
+                </Link>
+                <div
+                    className={
+                        "flex gap-7 items-center px-8 md:px-24 xl:px-0 w-7/12 max-xl:w-full text-xl max-xl:absolute max-xl:left-0 max-xl:top-0 max-xl:mt-[76px] transition-all max-xl:overflow-x-hidden max-xl:overflow-y-auto max-xl:bg-inherit max-xl:flex-col max-xl:items-start max-xl:justify-start max-xl:gap-4 " +
+                        (isHamburgerOpen
+                            ? "max-xl:py-5 max-xl:h-[calc(100vh-76px)]"
+                            : "max-xl:h-0 max-xl:py-0")
+                    }
+                >
+                    {navItemsBlog.map((item) => (
+                        <Link
+                            key={item.name}
+                            href={item.href}
+                            onClick={() => setIsHamburgerOpen(false)}
+                            className={
+                                "hover:text-cyan-600 dark:hover:text-amber-500 hover:underline font-semibold "
+                            }
+                        >
+                            {item.name}
+                        </Link>
+                    ))}
+                </div>
             </div>
             <ThemeSwicher />
             <Hamburger

@@ -24,14 +24,15 @@ export default function Page() {
     });
 
     return (
-        <div>
-            <div>
+        <div className="w-full">
+            {/* <div>
                 {blogs.map((blog) => (
                     <Link href={"/blog/" + blog.slug} passHref key={blog.slug}>
                         <div>{blog.meta.title}</div>
                     </Link>
                 ))}
-            </div>
+            </div> */}
+            <span className="font-mono text-lg w-full">No blog yet</span>
         </div>
     );
 }

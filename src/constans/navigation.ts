@@ -35,6 +35,6 @@ export const navItemsBlog : NavItem[] = [
     },
     {
         name: "Blog",
-        href: "/"
+        href: "/blog"
     }
 ]
