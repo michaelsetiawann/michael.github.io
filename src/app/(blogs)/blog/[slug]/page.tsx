@@ -5,7 +5,7 @@ import matter from "gray-matter";
 import { MDXRemote } from "next-mdx-remote/rsc";
 import { blogDir } from "@/constans/blog";
 
-export async function generateStaticParam() {
+export async function generateStaticParams() {
     const files = fs.readdirSync(path.join(blogDir));
 
     const paths = files.map((filename) => ({

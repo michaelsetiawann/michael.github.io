@@ -52,7 +52,7 @@ export const portfolioItems: PortfolioItem[] = [
         stacks: getSkillItems(["React JS", "Javascript", "Bootstrap", "Vite"]),
         description:
             "As a Frontend Web Developer, I have contributed my expertise to the development web applications tailored for registration, operational management, and service provisioning during the 3rd Indonesia Pathfinder Camporee in 2023. My role encompassed the creation of dynamic and user-centric interfaces, ensuring seamless navigation and optimal user experiences for attendees and stakeholders alike.",
-        url: "https://www.linkedin.com/in/glennprays/overlay/experience/2229768389/multiple-media-viewer/?profileId=ACoAADZE65wBsjv9qkPPbzdSTvKr0zop9oofQ_8&treasuryMediaId=1635536605878",
+        url: "https://glennprays.tech/files/portfolio-3ipac.pdf",
     },
     {
         title: "Movie Ticketin API",
