@@ -1,3 +1,4 @@
+import Home from "@/app/(general)/page"
 
 interface NavItem {
     name: string,
@@ -25,4 +26,15 @@ export const navItems : NavItem[] = [
         name: "Blog",
         href: "/blog"
     },
+]
+
+export const navItemsBlog : NavItem[] = [
+    {
+        name: "Home",
+        href: "/"
+    },
+    {
+        name: "Blog",
+        href: "/blog"
+    }
 ]

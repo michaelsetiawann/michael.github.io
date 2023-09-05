@@ -43,7 +43,7 @@ export const Navigation = () => {
                 type: 'tween'
             }}
             animate={{ y: isScrollingDown ? -100 : 0 }}
-            className={"fixed top-0 left-0 w-full py-5 px-8 md:px-24 flex items-center justify-between z-50 bg-inherit select-none " + (isOnTop || isHamburgerOpen ? "opacity-100" : "opacity-90")}>
+            className={"bg-neutral-200 dark:bg-neutral-900 fixed top-0 left-0 w-full py-5 px-8 md:px-24 flex items-center justify-between z-50 bg-inherit select-none " + (isOnTop || isHamburgerOpen ? "opacity-100" : "opacity-90")}>
             <Link id="logo" href='/' className="font-mono font-bold text-2xl select-none">
                 glennprays;
             </Link>
