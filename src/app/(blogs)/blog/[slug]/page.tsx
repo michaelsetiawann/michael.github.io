@@ -26,7 +26,7 @@ export async function generateStaticParams() {
 }
 
 export async function generateMetadata({ params }: Props): Promise<Metadata> {
-    const post = getBlogPostBySlug(params.slug);
+    const post = await getBlogPostBySlug(params.slug);
     if (!params)
         return {
             title: "Not found",
@@ -43,8 +43,8 @@ export async function generateMetadata({ params }: Props): Promise<Metadata> {
     };
 }
 
-export default function Page({ params }: Props) {
-    const blog = getBlogPostBySlug(params.slug);
+export default async function Page({ params }: Props) {
+    const blog = await getBlogPostBySlug(params.slug);
 
     return (
         <article className="prose prose-sm md:prose-base lg:prose-lg prose-slate prose-i dark:prose-invert mx-auto">
