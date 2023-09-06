@@ -12,7 +12,7 @@ export type Blog = {
 };
 
 // only return the slug and metadata
-export function getAllBlogPost(): Omit<Blog, "content">[] {
+export async function getAllBlogPost(): Promise<Omit<Blog, "content">[]> {
     const files = fs.readdirSync(path.join(blogDir));
 
     const blogs: Omit<Blog, "content">[] = files.map((filename) => {
@@ -33,7 +33,7 @@ export function getAllBlogPost(): Omit<Blog, "content">[] {
 }
 
 // return all props of blog
-export function getBlogPostBySlug(slug: string): Blog {
+export async function getBlogPostBySlug(slug: string): Promise<Blog> {
     const markdownFile = fs.readFileSync(
         path.join(blogDir, slug + ".mdx"),
         "utf-8"
