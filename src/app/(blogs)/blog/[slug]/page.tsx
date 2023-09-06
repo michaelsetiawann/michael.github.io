@@ -4,39 +4,52 @@ import matter from "gray-matter";
 
 import { MDXRemote } from "next-mdx-remote/rsc";
 import { blogDir } from "@/constans/blog";
+import { Metadata } from "next";
+import { getBlogPostBySlug } from "../_utils/getData";
+
+type Props = {
+    params: {
+        slug: string;
+    };
+};
 
 export async function generateStaticParams() {
     const files = fs.readdirSync(path.join(blogDir));
 
     const paths = files.map((filename) => ({
-        slug: filename.replace(".mdx", ""),
+        params: {
+            slug: filename.replace(".mdx", ""),
+        },
     }));
 
     return paths;
 }
 
-function getPost({ slug }: { slug: string }) {
-    const markdownFile = fs.readFileSync(
-        path.join(blogDir, slug + ".mdx"),
-        "utf-8"
-    );
-
-    const { data: fontMatter, content } = matter(markdownFile);
+export async function generateMetadata({ params }: Props): Promise<Metadata> {
+    const post = getBlogPostBySlug(params.slug);
+    if (!params)
+        return {
+            title: "Not found",
+            description: "The blog page is not found!",
+        };
 
     return {
-        fontMatter,
-        slug,
-        content,
+        title: post.meta.title,
+        description: post.meta.description,
+        robots: {
+            index: true,
+            nocache: false,
+        },
     };
 }
 
-export default function Page({ params }: any) {
-    const props = getPost(params);
+export default function Page({ params }: Props) {
+    const blog = getBlogPostBySlug(params.slug);
 
     return (
         <article className="prose prose-sm md:prose-base lg:prose-lg prose-slate prose-i dark:prose-invert mx-auto">
-            <h1>{props.fontMatter.title}</h1>
-            <MDXRemote source={props.content} />
+            <h1>{blog.meta.title}</h1>
+            <MDXRemote source={blog.content} />
         </article>
     );
 }

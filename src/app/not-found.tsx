@@ -1,8 +1,9 @@
+import { hostName } from '@/constans/general';
 import { Metadata } from 'next';
 import Link from 'next/link';
 import notFoundImage from 'public/images/not-found-image.png';
 
-const baseURL = new URL('https://glennprays.tech');
+const baseURL = new URL(hostName);
 const notFoundImageURL = new URL(notFoundImage.src, baseURL);
 export const metadata: Metadata = {
     metadataBase: baseURL,
