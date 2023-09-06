@@ -4,7 +4,7 @@ import { getAllBlogPost } from "./(blogs)/blog/_utils/getData";
 export default async function sitemap() {
     const baseUrl = hostName;
 
-    const blogs = getAllBlogPost();
+    const blogs = await getAllBlogPost();
 
     const blogsUrls = blogs.map((blog) => ({
         url: `${baseUrl}/blog/${blog.slug}`,
