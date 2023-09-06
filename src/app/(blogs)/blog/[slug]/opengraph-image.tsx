@@ -24,7 +24,7 @@ const fontFira = Fira_Code({
 });
 
 export default async function og({ params }: Props) {
-    const blog = getBlogPostBySlug(params.slug);
+    const blog = await getBlogPostBySlug(params.slug);
 
     return new ImageResponse(
         (
