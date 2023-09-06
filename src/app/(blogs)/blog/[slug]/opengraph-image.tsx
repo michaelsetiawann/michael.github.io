@@ -33,7 +33,7 @@ export default async function og({ params }: Props) {
                 <div tw="absolute z-10 flex inset-0">
                     <img
                         tw="flex flex-1"
-                    src={`http://localhost:3000/images/blog-cover.png`}
+                    src={`${hostName}/images/blog-cover.png`}
                     />
                 </div>
                 <div tw="text-7xl">{blog.meta.short_title}</div>
