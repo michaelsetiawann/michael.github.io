@@ -1,4 +1,4 @@
-import { getAllBlogPost } from "./_utils/getData";
+import { getAllBlogPost } from "./[slug]/_utils/getData";
 import Link from "next/link";
 
 export default async function Page() {
