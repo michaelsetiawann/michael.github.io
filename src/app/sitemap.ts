@@ -1,5 +1,5 @@
 import { hostName } from "@/constans/general";
-import { getAllBlogPost } from "./(blogs)/blog/_utils/getData";
+import { getAllBlogPost } from "./(blogs)/blog/[slug]/_utils/getData";
 
 export default async function sitemap() {
     const baseUrl = hostName;
