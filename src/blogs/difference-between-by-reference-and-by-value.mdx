@@ -1,0 +1,101 @@
+---
+title: Different Between by Reference and by Value
+short_title: By Reference VS by Value
+date: 2023-09-12
+description: Pass by reference and pass by value are two different ways in which data can be passed or assign.
+author: Glenn Pray
+---
+
+In programming, `by reference` and `by value` are two different ways in which data can be passed or assign into function/method or variable. Passing/assign by value or reference works differenly can vary from one programming language to another. The behavior or these concepts is often determined by the language's design and the language constructs in provides. So it's essential to consult the documentation and understand the specific behavior of by value and by reference in the protramming language you're working with.  
+
+But in this article we'll talk about the general concept of passing/assign by value and by reference to give you a good understanding, because this concept is always the same in all programming language. So i'll give the example in pseudocode to help you easier to understand.
+
+## By Value
+Passing/assign by value is copying of the actual data (value, usually a variable's value) is passed to function/method or assigned to another variable, simply it creating another copy of that variable. Any change made to this new copy do not affect the original variable. By value is typically used for simple data types like integers, float, characters, and small, immutable objects.
+
+![Assign by value](/images/blog/assign-by-value.png)
+
+This is example Assign by value:
+```
+var a = "Hello"
+var b = a 
+
+print(a) # print "Hello"
+print(b) # print "Hello"
+
+# modifying the b variable
+b = "Hello world!"
+
+print(a) # print "Hello"
+print(b) # print "Hello world!"
+```
+From example above the change in `b` variable didn't affect the `a` variable as the original variable.  
+
+This is example Passing by value:
+```
+function printWord(word) {
+    word = word + " world!"
+    print(word)
+}
+
+var a = "Hello"
+print(a) # print "Hello"
+
+printWord(a) # print "Hello world!"
+print(a) # print "Hello"
+```
+The variable `a` didn't affect by the change in the function `printWord()` because the function creating the local copy of `a` variable within the function's scope.
+
+## By Reference
+Diffrent with before, Passing/assing by reference, it just make a reference pointer to the original data that is passed to the function/method or assigned to the new variable. Any change made to the passed/assigned data will be affect the original data. By reference usually used for complex data type like arrays, objects, and data sturcture. It allow efficient manipulation and modification of these data structures.
+
+![Assign by reference](/images/blog/assign-by-reference.png)
+
+This is example Assign by Reference:
+```
+# person object
+var person = {
+    name: "Jhon",
+    age: 55
+}
+
+var person2 = person
+
+print(person.name) # print "Jhon"
+print(person2.name) # print "Jhon"
+
+# modify the second object
+person2.name = "John Doe"
+
+print(person2.name) # print "Jhon Doe"
+print(person.name) # print "Jhon Doe"
+```
+
+The change that made to the `person2` object affect the `person` object as the original data. It happen because the `person2` object didn't copy and store the `person` object data, it's only store the reference address to the `person` object, so actually the change on `person2` it changing the `person` object.
+
+This is example Passing by Reference:
+```
+function changeName(person, newName) {
+    person.name = newName
+}
+
+# person object
+var person = {
+    name: "Jhon",
+    age: 55
+}
+
+print(person.name) # print "Jhon"
+
+changeName(person, "John Doe")
+
+print(person.name) # print "Jhon Doe"
+```
+The object `person` is passed into `changeName()` function, it is not passing the value of the `person` object but same like example before, it only passing the reference address of `person` object. So actually `changeName()` modifying `person` object on the function and will affect the original data.
+
+## Conclusion
+`by value` and `by reference` is used for diffrent cases and scenarios. `by value` suitable for ensuring the original data remains unchanged and avoid unintended side effects and providing predictability and isolation but can be less memory-efficient for large data structures.
+
+`by reference` suitable for modifying the original value of a parameter/variable that change reflected outside the function and it improve memory efficiency when working with large data structures.
+
+In pratice, the choice between `by value` and `by reference` depends on your specific programming language, the data types you're working with, and behavour you want to achieve. 
