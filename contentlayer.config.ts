@@ -25,6 +25,11 @@ const Blog = defineDocumentType(() => ({
             description: "The Description of the blog",
             required: true,
         },
+        author: {
+            type: "string",
+            description: "The author of the blog",
+            required: true,
+        },
     },
     computedFields: {
         url: {

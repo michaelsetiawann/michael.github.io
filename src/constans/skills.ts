@@ -14,6 +14,7 @@ import mysql from "public/images/icon/stack/mysql.svg"
 import neo4j from "public/images/icon/stack/neo4j.svg"
 import node from "public/images/icon/stack/node js.svg"
 import vite from "public/images/icon/stack/vite.svg"
+import contentlayer from "public/images/icon/stack/contentlayer.svg"
 import vscode from "public/images/icon/tools/vs-code.svg"
 import ubuntu from "public/images/icon/tools/ubuntu.svg"
 import git from "public/images/icon/tools/git.svg"
@@ -83,6 +84,11 @@ export const stackList : SkillItem[] = [
         name: "Chakra UI",
         icon: chakraui,
         alt: "Chakra UI Icon",
+    },
+    {
+        name: "Contentlayer",
+        icon: contentlayer,
+        alt: "Contentlayer Icon",
     },
     {
         name: "Framer",

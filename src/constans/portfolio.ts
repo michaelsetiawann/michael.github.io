@@ -42,7 +42,7 @@ export const portfolioItems: PortfolioItem[] = [
     {
         title: "Personal Website",
         tumbnail: personalWebsite,
-        stacks: getSkillItems(["Next JS", "Typescript", "Tailwind", "Framer"]),
+        stacks: getSkillItems(["Next JS", "Typescript", "Tailwind", "Framer", "Contentlayer"]),
         description: "This is my personal website",
         url: "https://github.com/glennprays/glennprays.github.io",
     },

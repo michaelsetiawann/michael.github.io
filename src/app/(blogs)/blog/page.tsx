@@ -1,13 +1,16 @@
 import { allBlogs, Blog } from "contentlayer/generated";
-import { getMDXComponent } from "next-contentlayer/hooks";
 import { compareDesc, format, parseISO } from "date-fns";
 import Link from "next/link";
 
 function BlogCard({ blog }: { blog: Blog }) {
     return (
-        <Link href={blog.url} passHref>
-            <div>{blog.title}</div>
-            <time dateTime={blog.date}>
+        <Link
+            href={blog.url}
+            passHref
+            className="flex flex-col"
+        >
+            <div className="text-3xl font-semibold hover:underline">{blog.title}</div>
+            <time dateTime={blog.date} className="text-xs">
                 {format(parseISO(blog.date), "LLLL d, yyyy")}
             </time>
             <div>{blog.description}</div>
@@ -21,15 +24,15 @@ export default function Page() {
     );
 
     return (
-        <div className="w-full">
-            <div className="mb-7 flex flex-col gap-4">
+        <div className="w-full mx-auto md:w-[650px]">
+            <div className="mb-9 flex flex-col gap-4">
                 <h1 className="text-5xl font-bold">Blogs</h1>
                 <span className="text-sm">
                     This is my blog, talking about software engineering and data
                     science.
                 </span>
             </div>
-            <div>
+            <div className="flex flex-col gap-7">
                 {blogs.map((blog) => (
                     <BlogCard blog={blog} key={blog.url} />
                 ))}

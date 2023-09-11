@@ -1,0 +1,48 @@
+---
+title: Breadth First Search (BFS) VS Depth First Search (DFS)
+short_title: BFS VS DFS
+date: 2023-09-11
+description: Different between Breadth First Search (BFS) and Depth First Search (DFS)
+author: Glenn Pray
+---
+
+Both Breadth First Search (BFS) and Depth First Search (DFS) are algorithm that used for traversing and seraching through graph or tree. But each has different approach and strategy.  
+
+## Breadth First Search (BFS)
+BFS explores all the nodes at the current level (neighbors) first before moving to next level and start from the root (or specified node). It uses Queue data sturcture that follow FIFO (First In First Out). This search algorithm is the good way for searching the shortest path from root into targeted node on the tree/graph.
+
+### BFS Advantages
+- Suitable for searching the shortest path Node from the root.
+- Can prevent from trapping into infinite loops, so it will always find a solution if solution exist.
+- Optimal if target close to the source (Root)
+
+### BFS Disadvantages
+- BFS require more memory because needs to store all nodes at current level in a queue.
+- Slower as compared to DFS.
+
+### BFS Time Complexity
+BFS time complexity is `O(V+E)`, where V is number of Nodes and E is the number of edges in the graph.
+
+![BFS](/gif/blog/bfs.gif)
+BFS can used for finding shortest path, web crawling, maze solving, and many others.
+
+## Depth First Search (DFS)
+DFS explores as far down a branch as deeply as possible and then backtracks to explore other branches. It start explore from the most left branch so it is not always optimal result because it find _leftmost_ solution. It uses Stack data sturcture that follow LIFO (Last In First Out). This algorithm is preferable if the target nodes far from the source (Root).
+
+### DFS Advantages
+- Memory efficiency because it only need to store the current branch on the stack.
+- Faster as compared to BFS.
+- Suitable for decision tree because it will exploring all possible paths, such as permutations or combinations.
+
+### DFS Disadvantages
+- It is possible be trapped in infinite loops when it uses in graphs that contain cycles.
+- Not guarantee optimaly finding the shortest path.
+
+### DFS Time Complexity
+DFS time complexity is also same with BFS, `O(V+E)`.
+
+![DFS](/gif/blog/dfs.gif)
+DFS can be used for decision tree like game that need explore possible game states like chess and tic-tac-toe, and can be used for anomaly detection, and many others.
+
+## Conclusion
+BFS can be used for finding the shortest path and complete searching but it require high memory used. DFS can be used for finding all possible path and memory efficiency but in some case it stuck in infinite branch. The choice between DFS and BFS depeds on the spcific problem and the graph/tree characteristic. 
