@@ -1,6 +1,10 @@
 import { allBlogs } from "contentlayer/generated";
 import { getMDXComponent } from "next-contentlayer/hooks";
 import { format, parseISO } from "date-fns";
+import { Metadata } from "next";
+import fs from "fs";
+import path from "path";
+import puppeteer from "puppeteer";
 
 type Props = {
     params: {
@@ -8,23 +12,65 @@ type Props = {
     };
 };
 
+async function generateOg(shortTitle: string, slug: string): Promise<string> {
+    const fileName = `${slug}.png`;
+    const fileUrl = path.join("images", "blog", ".opengraph", fileName);
+    const filePath = path.join("public", fileUrl);
+
+    const og = `
+    <div style="width: 1200px; height: 630px; position: relative; display: flex; align-items: center; justify-content: center; background-image: url('https://glennprays.tech/images/blog-cover.png'); background-size: cover;">
+        <span style="position: absolute; z-index: 20; font-family: monospace; font-size: 75px; font-weight: bold; word-spacing: -20px; color: white">
+            ${shortTitle}
+        </span>
+    </div>
+`;
+
+    const browser = await puppeteer.launch();
+    const page = await browser.newPage();
+
+    await page.setContent(og);
+
+    const imageData = await page.screenshot({
+        encoding: "base64",
+        clip: {
+            x: 8,
+            y: 8,
+            width: 1200,
+            height: 630,
+        },
+    });
+
+    fs.writeFileSync(filePath, imageData, "base64");
+
+    await browser.close();
+
+    return fileUrl;
+}
+
 export async function generateStaticParams() {
     const paths = allBlogs.map((blog) => ({ slug: blog.slug }));
-
     return paths;
 }
 
-export function generateMetadata({ params }: Props) {
+export async function generateMetadata({ params }: Props) {
     const blog = allBlogs.find((blog) => blog.slug === params.slug);
-    return {
+    const ogUrl = await generateOg(blog?.short_title || "", blog?.slug || "");
+    const metadata: Metadata = {
         title: blog?.title,
         description: blog?.description,
         robots: {
             index: true,
             nocache: false,
         },
-        authors: { name: "Glenn Pray" },
+        openGraph: {
+            images: ogUrl,
+        },
+        twitter: {
+            images: ogUrl,
+        },
+        authors: { name: blog?.author },
     };
+    return metadata;
 }
 
 export default async function Page({ params }: Props) {
