@@ -1,6 +1,6 @@
-import { MDXRemote } from "next-mdx-remote/rsc";
-import { Metadata } from "next";
-import { getAllBlogPost, getBlogPostBySlug } from "../_utils/getData";
+import { allBlogs } from "contentlayer/generated";
+import { getMDXComponent } from "next-contentlayer/hooks";
+import { format, parseISO } from "date-fns";
 
 type Props = {
     params: {
@@ -9,36 +9,40 @@ type Props = {
 };
 
 export async function generateStaticParams() {
-    const blogs = await getAllBlogPost();
-
-    const paths = blogs.map((blog) => ({
-        slug: blog.slug,
-    }));
+    const paths = allBlogs.map((blog) => ({ slug: blog.slug }));
 
     return paths;
 }
 
-export async function generateMetadata({ params }: Props): Promise<Metadata> {
-    const post = await getBlogPostBySlug(params.slug);
-    console.log(params.slug)
+export function generateMetadata({ params }: Props) {
+    const blog = allBlogs.find((blog) => blog.slug === params.slug);
     return {
-        title: post.meta.title,
-        description: post.meta.description,
+        title: blog?.title,
+        description: blog?.description,
         robots: {
             index: true,
             nocache: false,
         },
+        authors: { name: "Glenn Pray" },
     };
 }
 
 export default async function Page({ params }: Props) {
-    const blog = await getBlogPostBySlug(params.slug);
-    console.log(blog.meta.title);
+    const blog = allBlogs.find((blog) => blog.slug === params.slug);
+
+    const Content = getMDXComponent(blog?.body.code || "");
 
     return (
-        <article className="prose prose-sm md:prose-base lg:prose-lg prose-slate prose-i dark:prose-invert mx-auto">
-            <h1>{blog.meta.title}</h1>
-            <MDXRemote source={blog.content} />
+        <article className="prose prose-sm md:prose-base lg:prose-lg prose-slate prose-i dark:prose-invert mx-auto prose-h1:my-1 prose-h1:font-bold prose-h2:mt-7 prose-h2:mb-2 prose-img:w-full md:prose-img:w-[500px] prose-li:m-0 prose-code:text-base prose-code:whitespace-pre-wrap">
+            <time
+                dateTime={blog?.date}
+                className="mb-1 text-xs text-gray-600 dark:text-neutral-400"
+            >
+                {format(parseISO(blog?.date || ""), "LLLL d, yyyy")}
+            </time>
+            <h1>{blog?.title}</h1>
+            <Content />
+            <span className="text-sm">Author: {blog?.author}</span>
         </article>
     );
 }

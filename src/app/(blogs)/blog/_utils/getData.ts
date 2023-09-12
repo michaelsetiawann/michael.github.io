@@ -47,3 +47,4 @@ export async function getBlogPostBySlug(slug: string): Promise<Blog> {
         slug: slug,
     };
 }
+
