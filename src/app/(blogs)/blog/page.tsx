@@ -16,44 +16,6 @@ function BlogCard({ blog }: { blog: Blog }) {
     );
 }
 
-function Opengraph() {
-    return (
-        <div
-            style={{
-                width: "1200px",
-                height: "630px",
-                position: "relative",
-                display: "flex",
-                alignItems: "center",
-                justifyContent: "center",
-            }}
-        >
-            <div
-                style={{
-                    position: "absolute",
-                    display: "flex",
-                    zIndex: 10,
-                    inset: "0px",
-                }}
-            >
-                <img src="/images/blog-cover.png" />
-            </div>
-            <span
-                style={{
-                    position: "absolute",
-                    zIndex: 20,
-                    fontFamily: "monospace",
-                    fontSize: "75px",
-                    fontWeight: "bold",
-                    wordSpacing: "-20px",
-                }}
-            >
-                BFS VS DFS
-            </span>
-        </div>
-    );
-}
-
 export default function Page() {
     const blogs = allBlogs.sort((a, b) =>
         compareDesc(new Date(a.date), new Date(b.date))
@@ -61,7 +23,6 @@ export default function Page() {
 
     return (
         <div className="w-full mx-auto md:w-[650px]">
-            <Opengraph />
             <div className="mb-9 flex flex-col gap-4">
                 <h1 className="text-5xl font-bold">Blogs</h1>
                 <span className="text-sm">
