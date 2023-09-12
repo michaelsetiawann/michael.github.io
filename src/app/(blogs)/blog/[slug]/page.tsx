@@ -54,7 +54,7 @@ export async function generateStaticParams() {
 
 export async function generateMetadata({ params }: Props) {
     const blog = allBlogs.find((blog) => blog.slug === params.slug);
-    const ogUrl = await generateOg(blog?.short_title || "", blog?.slug || "");
+    const ogPath = await generateOg(blog?.short_title || "", blog?.slug || "");
     const metadata: Metadata = {
         title: blog?.title,
         description: blog?.description,
@@ -63,10 +63,10 @@ export async function generateMetadata({ params }: Props) {
             nocache: false,
         },
         openGraph: {
-            images: ogUrl,
+            images: ogPath,
         },
         twitter: {
-            images: ogUrl,
+            images: ogPath,
         },
         authors: { name: blog?.author },
     };
