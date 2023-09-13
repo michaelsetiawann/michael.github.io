@@ -107,6 +107,7 @@ const PortfolioItemDiv = ({ item }: { item: PortfolioItem }) => {
                             <Image
                                 src={tumbnail}
                                 width="0"
+                                height="0"
                                 alt={title}
                                 className="w-full rounded-lg border border-neutral-400 dark:border-neutral-200"
                             />

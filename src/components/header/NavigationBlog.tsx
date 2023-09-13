@@ -51,11 +51,11 @@ export const NavigationBlog = () => {
                 <Link
                     id="logo"
                     href="/blog"
-                    className="font-mono font-bold text-2xl select-none"
+                    className="font-mono font-bold text-lg sm:text-2xl select-none"
                 >
                     glennprays;
                     <span className="font-light">
-                        |<span className="font-sans text-xl">Blog</span>
+                        |<span className="font-sans text-base sm:text-xl">Blog</span>
                     </span>
                 </Link>
                 <div
