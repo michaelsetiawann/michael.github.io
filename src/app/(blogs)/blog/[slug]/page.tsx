@@ -5,6 +5,7 @@ import { Metadata } from "next";
 import fs from "fs";
 import path from "path";
 import puppeteer from "puppeteer";
+import Image from "next/image";
 
 type Props = {
     params: {
@@ -77,7 +78,16 @@ export default async function Page({ params }: Props) {
     const blog = allBlogs.find((blog) => blog.slug === params.slug);
 
     const Content = getMDXComponent(blog?.body.code || "");
-
+    const blogCoverPath = path.join(
+        "..",
+        "..",
+        "..",
+        "..",
+        "images",
+        "blog",
+        ".opengraph",
+        blog?.slug + ".png"
+    );
     return (
         <article className="prose prose-sm md:prose-base lg:prose-lg prose-slate prose-i dark:prose-invert mx-auto prose-h1:my-1 prose-h1:font-bold prose-h2:mt-7 prose-h2:mb-2 prose-img:w-full md:prose-img:w-[500px] prose-li:m-0 prose-code:text-base prose-code:whitespace-pre-wrap">
             <time
@@ -87,6 +97,13 @@ export default async function Page({ params }: Props) {
                 {format(parseISO(blog?.date || ""), "LLLL d, yyyy")}
             </time>
             <h1>{blog?.title}</h1>
+            <Image
+                src={blogCoverPath}
+                alt={`${blog?.title} blog cover`}
+                width={0}
+                height={0}
+                className="mx-auto w-full md:w-[500px]"
+            />
             <Content />
             <span className="text-sm">Author: {blog?.author}</span>
         </article>

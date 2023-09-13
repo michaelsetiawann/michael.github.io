@@ -1,5 +1,5 @@
 import { StaticImport } from "next/dist/shared/lib/get-img-props";
-import { stackList, toolsList, SkillItem } from "./skills";
+import { stackList, SkillItem } from "./skills";
 import personalWebsite from "public/images/portfolio/personal-website.png";
 import ipac from "public/images/portfolio/3ipac.png";
 import quoteGenerator from "public/images/portfolio/quote-generator.png";
