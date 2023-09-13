@@ -1,14 +1,14 @@
 import { hostName } from "@/constans/general";
-import { getAllBlogPost } from "./(blogs)/blog/_utils/getData";
+import { allBlogs } from "contentlayer/generated";
 
 export default async function sitemap() {
     const baseUrl = hostName;
 
-    const blogs = await getAllBlogPost();
+    const blogs = allBlogs;
 
     const blogsUrls = blogs.map((blog) => ({
         url: `${baseUrl}/blog/${blog.slug}`,
-        lastModified: new Date(blog.meta.date),
+        lastModified: new Date(blog.date),
     }));
 
     return [
