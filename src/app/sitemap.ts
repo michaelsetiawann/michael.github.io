@@ -7,7 +7,7 @@ export default async function sitemap() {
     const blogs = allBlogs;
 
     const blogsUrls = blogs.map((blog) => ({
-        url: `${baseUrl}/blog/${blog.slug}`,
+        url: `${baseUrl}${blog.url}`,
         lastModified: new Date(blog.date),
     }));
 
