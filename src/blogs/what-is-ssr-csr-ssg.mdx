@@ -1,0 +1,47 @@
+---
+title: "Web Development: What is SSR, CSR, SSG"
+short_title: SSR, CSR, and SSG
+date: 2023-09-13
+description: What is SSR (Server-Side Rendering), CSR (Client-Side Rendering), SSG (Static Site Generation) in website development
+author: Glenn Pray
+---
+
+SSR, CSR, and SSG are acronyms commonly used in web development that related to rendering web applications. Website rendering refers to the process of generating and displaying the content of a website in a browser, it can impact user experience, performance, and SEO (Search Engine optimization).
+
+## SSR (Server-Side Rendering)
+SSR is a web rendering method that generate the HTML dynamically on the server for each user request, so the client's browser typically receive a fully rendered HTML page from the HTML.
+
+![Server-side rendering flow animation](/gif/blog/ssr.gif)
+
+**How it works:** User make a request to the server, than the server will be fetches the data and renders the HTML content on the server before sending it to the client's browser. This approach allows for dynamic content on website.
+
+**Advantages:** This method provide SEO advantage because the search engine crawler can easily index the content, and allows dynamic content generation that suitable for web with frequenly changing data. SSR pages have a faster initial load time that improve user experience.
+
+**Disadvantages:** Because of the HTML sould be rendered on the server, it will increase the server load especially for high number of user request. Subsequence of interaction may be slower because the server should fetching and rendering data on the server.  
+
+## CSR (Client-Side Rendering)
+CSR is a rendering method that the HTML is load and render on the client's browser, which then it use javascript for rendering the content.
+
+![Client-Side rendering flow animation](/gif/blog/csr.gif)
+
+**How it works:** The user make a request to the server than the server will send an emty HTML and javascipt bundler, that use for rendering the content, to the client's browser. After fully downloaded the javascript bundler, the browser will execute the bundler to show the web content.
+
+**Advantages:** It can provide fast and responsive user interaction because the HTML initial load is minimal and data fetching and rendering are handle in the client's browser. Because of that it will reduce server load because the request to the server will be lower.
+
+**Disadvantages:** In CSR, SEO (Search Engine Optimization) may have difficult because when the crawler bot make a request to the server, server will response with only emty HTML and a javascript that need time to executes.
+
+
+## SSG (Static Site Generation)
+SSG site is a website that the HTML pages are generated at the build time and not dynamically generated on the server for each user request. So the server already have the pre-rendered static HTML that no need to re-render as a response to the user request.
+
+![Static Site Generation flow animation](/gif/blog/ssg.gif)
+
+
+**How it works:** SSG site is create on the website build time into static HTML. The server will response with the static HTML for each the user request.
+
+**Advantages:** This method imporve the website page load and also the server load because there will be no need server processing. And also SSG give a better SEO performace.
+
+**Disadvantages:** Because it already rendered on the build time, it will be limited for dynamic content like user-spesific content. And when updating the SSG page, the only way that can be is re-build it again and may take more time especially for large website.
+
+## Conclution
+The choise of using SSR, CSR, and SSG depends on your requirement, performace goals, and many factors like SEO performace, intial load. You can also using "hybrid rendering" by combining these method, you can take advantage of the strength of each method for different parts of your application.
