@@ -6,6 +6,8 @@ import fs from "fs";
 import path from "path";
 import puppeteer from "puppeteer";
 import Image from "next/image";
+import { hostName } from "@/constans/general";
+import ShareGroup from "@/components/header/ShareGroup";
 
 type Props = {
     params: {
@@ -88,6 +90,9 @@ export default async function Page({ params }: Props) {
         ".opengraph",
         blog?.slug + ".png"
     );
+
+    const blogUrl = `${hostName}/blog/${blog?.slug}`;
+    const shareQuote = blog?.description || "";
     return (
         <article className="prose prose-sm md:prose-base lg:prose-lg prose-slate prose-i dark:prose-invert mx-auto prose-h1:my-1 prose-h1:font-bold prose-h2:mt-7 prose-h2:mb-2 prose-img:w-full md:prose-img:w-[500px] prose-video:w-full md:prose-video:w-[500px] prose-li:m-0 prose-code:text-base prose-code:whitespace-pre-wrap  ">
             <time
@@ -104,6 +109,9 @@ export default async function Page({ params }: Props) {
                 height={0}
                 className="mx-auto w-full md:w-[500px]"
             />
+            <div id="share_group" className=" flex gap-1">
+                <ShareGroup shareUrl={blogUrl} caption={shareQuote} size={32} />
+            </div>
             <Content />
             <span className="text-sm">Author: {blog?.author}</span>
         </article>
