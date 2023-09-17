@@ -1,0 +1,43 @@
+---
+title: "Exploring Search Algorithms: Uninformed and Informed Search"
+short_title: Informed and Uninformed Search
+date: 2023-09-18
+description: What is different uninformed and informed search for problem solving?
+author: Glenn Pray
+---
+Uninformed and Informed search is used for finding step to solve problem. Both of this techniques have a few different things but the informed search is more efficient. Either informed and uninformed are used in Artificial Intelligence field.
+
+## Uninformed Search
+Uninformed search is algorithm that explore the search space without addtional information other than _problem definition_, so it's do not incorporate any external knowledge beyond the provided problem, because of that, search also called _blind search_. Even so, this algorithm using systematically method to explore all possible state.
+
+> [Breadth First Search (BFS) VS Depth First Search (DFS)](/blog/bfs-and-dfs)
+### Examplea of Uninformed Search
+- **Breadth First Search (BFS) and Depth First Search (DFS)**
+- **Uniform Cost Search (UCS)**  
+  This is used for finding the lowest cost in path from the initial state into goal state. UCS also known as Dijkstra's algorithm. It will find the optimal path with the lowest cost but it may still explore a large portion of the search space. UCS is a complete algorithm so it will always find a solution and it is guaranteeing find the lowest-cost path to the goal.
+
+  <video controls>
+    <source src='/videos/blog/ucs.mp4' type='video/mp4'/>
+  </video>
+
+## Informed Search
+Informed search also known as heuristic search, it is used addtional information outside the _problem definition_ or heuristic to guide the search. _Heuristic_ is a function used in informed search algorithm to estimate the cost or distance from particular state to the goal state, so it aim to find solutions more efficienly by using additional information beyond the _problem definition_. Heuristic function often denoted as `h(n)`, which estimate the cost and distance from the distance state `n` to the goal.
+
+### Examples of Informed Search
+- **Greedy Search**  
+  This search will focus on selecting the most promising state at each step based on heuristic estimate `h(n)`, so it always choosing the option that seems best _at the moment_. Greedy can be efficient when the heuristic provides accurate guidance, it's often used for pathfinding that prioritizing finding quick solution than guaranteeing optimaly. But greedy search is not a complete algorithhm, so it can get stuck in situation where no path to the goal.
+  #### Example not complete greedy 
+  <video controls>
+    <source src='/videos/blog/greedy-not-complete.mp4' type='video/mp4'/>
+  </video>
+  In example above, the greedy algorithm didn't find the solution (path to the goal) because of it get stuck at `Node I`.
+  #### Example complete greedy
+  <video controls>
+    <source src='/videos/blog/greedy-complete.mp4' type='video/mp4'/>
+  </video>
+  This is greedy algorithm completed version because it finded the solution (path to the goal).
+- **A\* Search**  
+  It's pronouced "A-star", it is informed search that cobines the advantages of both UCS and greedy search. It's the one of the most popular algorithms for solving pathfinding and optimization problems. A\* used for find the shortest path by considerint both the actual path cost `g(n)` and heuristic estimate `h(n)` to reach the goal and to get balance between optimality and efficiency. A\* search used sum `f(n) = g(n) + h(n)` to orders it can called `A* Score`. It's will always find solution so it is a complete algorithm. A\* is also optimal because it guaranteeing it'll find the shortest path to the goal.
+  <video controls>
+    <source src='/videos/blog/a-star.mp4' type='video/mp4'/>
+  </video>
