@@ -30,7 +30,7 @@ export default function Page() {
                     science.
                 </span>
             </div>
-            <div className="flex flex-col gap-7">
+            <div className="flex flex-col gap-12">
                 {blogs.map((blog) => (
                     <BlogCard blog={blog} key={blog.url} />
                 ))}

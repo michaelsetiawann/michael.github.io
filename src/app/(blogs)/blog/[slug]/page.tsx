@@ -19,8 +19,8 @@ async function generateOg(shortTitle: string, slug: string): Promise<string> {
     const filePath = path.join("public", fileUrl);
 
     const og = `
-    <div style="width: 1200px; height: 630px; position: relative; display: flex; align-items: center; justify-content: center; background-image: url('https://glennprays.tech/images/blog-cover.png'); background-size: cover;">
-        <span style="position: absolute; z-index: 20; font-family: monospace; font-size: 75px; font-weight: bold; word-spacing: -20px; color: white">
+    <div style="width: 1200px; height: 630px; text-align: center; position: relative; display: flex; align-items: center; justify-content: center; background-image: url('https://glennprays.tech/images/blog-cover.png'); background-size: cover;">
+        <span style="position: absolute; z-index: 20; font-family: monospace; font-size: 75px; font-weight: bolder; word-spacing: -20px; color: white;">
             ${shortTitle}
         </span>
     </div>
@@ -57,7 +57,7 @@ export async function generateMetadata({ params }: Props) {
     const blog = allBlogs.find((blog) => blog.slug === params.slug);
     const ogPath = await generateOg(blog?.short_title || "", blog?.slug || "");
     const metadata: Metadata = {
-        title: blog?.title,
+        title: blog?.title + " | glennprays;",
         description: blog?.description,
         robots: {
             index: true,
@@ -89,7 +89,7 @@ export default async function Page({ params }: Props) {
         blog?.slug + ".png"
     );
     return (
-        <article className="prose prose-sm md:prose-base lg:prose-lg prose-slate prose-i dark:prose-invert mx-auto prose-h1:my-1 prose-h1:font-bold prose-h2:mt-7 prose-h2:mb-2 prose-img:w-full md:prose-img:w-[500px] prose-li:m-0 prose-code:text-base prose-code:whitespace-pre-wrap">
+        <article className="prose prose-sm md:prose-base lg:prose-lg prose-slate prose-i dark:prose-invert mx-auto prose-h1:my-1 prose-h1:font-bold prose-h2:mt-7 prose-h2:mb-2 prose-img:w-full md:prose-img:w-[500px] prose-video:w-full md:prose-video:w-[500px] prose-li:m-0 prose-code:text-base prose-code:whitespace-pre-wrap  ">
             <time
                 dateTime={blog?.date}
                 className="mb-1 text-xs text-gray-600 dark:text-neutral-400"
