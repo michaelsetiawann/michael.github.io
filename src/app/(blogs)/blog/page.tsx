@@ -19,7 +19,7 @@ function BlogCard({ blog }: { blog: Blog }) {
             </Link>
             <div className="flex gap-2 items-center text-xs mt-3">
                 <Link
-                    href={`blog/tag/${blog.flattened_tag}`}
+                    href={`blog/topics/${blog.flattened_tag}`}
                     className="py-1 px-2 rounded-full bg-neutral-300 dark:bg-neutral-700"
                 >
                     {blog.tag}

@@ -9,6 +9,9 @@ import Image from "next/image";
 import { hostName } from "@/constans/general";
 import ShareGroup from "@/components/header/ShareGroup";
 import Link from "next/link";
+import React from "react";
+
+import { MdArrowForwardIos } from "react-icons/md";
 
 type Props = {
     params: {
@@ -94,27 +97,48 @@ export default async function Page({ params }: Props) {
 
     const blogUrl = `${hostName}/blog/${blog?.slug}`;
     const shareQuote = blog?.description || "";
+    const routeNav = [
+        {
+            name: "Blog",
+            href: "/blog",
+        },
+        {
+            name: "Topics",
+            href: "/blog/topics",
+        },
+        {
+            name: blog?.tag,
+            href: `/blog/topics/${blog?.flattened_tag}`,
+        },
+    ];
     return (
         <article className="prose prose-sm md:prose-base lg:prose-lg prose-slate prose-i dark:prose-invert mx-auto prose-h1:my-1 prose-h1:font-bold prose-h2:mt-7 prose-h2:mb-2 prose-img:w-full md:prose-img:w-[500px] prose-video:w-full md:prose-video:w-[500px] prose-li:m-0 prose-code:text-base prose-code:whitespace-pre-wrap  ">
-            <time
-                dateTime={blog?.date}
-                className="mb-1 text-xs text-gray-600 dark:text-neutral-400"
-            >
-                {format(parseISO(blog?.date || ""), "LLLL d, yyyy")}
-            </time>
+            <div className="flex gap-3 items-center not-prose max-sm:text-sm mb-2">
+                {routeNav.map((route, index) => (
+                    <React.Fragment key={route.name}>
+                        <Link
+                            href={route.href}
+                            className="font-medium hover:underline"
+                        >
+                            {route.name}
+                        </Link>
+                        {index !== routeNav.length - 1 ? (
+                            <MdArrowForwardIos />
+                        ) : null}
+                    </React.Fragment>
+                ))}
+            </div>
             <h1>{blog?.title}</h1>
+            <div className="flex items-center gap-2 my-2 text-xs text-gray-600 dark:text-neutral-400">
+                <time dateTime={blog?.date} className="">
+                    {format(parseISO(blog?.date || ""), "LLLL d, yyyy")}
+                </time>
+                ·<span className="">{blog?.reading_time} min read</span>
+            </div>
             <div
                 id="share_group"
                 className=" flex w-full justify-end items-center gap-2 not-prose"
             >
-                <span className="text-sm">{blog?.reading_time} min read</span>·
-                <Link
-                    href={`/blog/tag/${blog?.flattened_tag}`}
-                    className="text-sm hover:underline"
-                >
-                    {blog?.tag}
-                </Link>
-                ·
                 <ShareGroup shareUrl={blogUrl} caption={shareQuote} />
             </div>
             <Image
