@@ -1,3 +1,4 @@
+import { estimateReadingTime } from "./src/utils/reading";
 import { defineDocumentType, makeSource } from "contentlayer/source-files";
 
 const Blog = defineDocumentType(() => ({
@@ -39,6 +40,10 @@ const Blog = defineDocumentType(() => ({
         slug: {
             type: "string",
             resolve: (doc) => doc._raw.flattenedPath,
+        },
+        reading_time: {
+            type: "string",
+            resolve: (doc) => estimateReadingTime(doc.body.raw),
         },
     },
 }));

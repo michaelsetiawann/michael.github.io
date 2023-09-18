@@ -102,6 +102,14 @@ export default async function Page({ params }: Props) {
                 {format(parseISO(blog?.date || ""), "LLLL d, yyyy")}
             </time>
             <h1>{blog?.title}</h1>
+            <div
+                id="share_group"
+                className=" flex w-full justify-end items-center gap-2 not-prose"
+            >
+                <span className="text-sm">{blog?.reading_time} min read</span>
+                ·
+                <ShareGroup shareUrl={blogUrl} caption={shareQuote} />
+            </div>
             <Image
                 src={blogCoverPath}
                 alt={`${blog?.title} blog cover`}
@@ -109,9 +117,6 @@ export default async function Page({ params }: Props) {
                 height={0}
                 className="mx-auto w-full md:w-[500px]"
             />
-            <div id="share_group" className=" flex gap-1">
-                <ShareGroup shareUrl={blogUrl} caption={shareQuote} size={32} />
-            </div>
             <Content />
             <span className="text-sm">Author: {blog?.author}</span>
         </article>
