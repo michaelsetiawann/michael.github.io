@@ -8,9 +8,12 @@ function BlogCard({ blog }: { blog: Blog }) {
             <div className="text-3xl font-semibold hover:underline">
                 {blog.title}
             </div>
-            <time dateTime={blog.date} className="text-xs">
-                {format(parseISO(blog.date), "LLLL d, yyyy")}
-            </time>
+            <div className="flex items-center gap-2 text-xs">
+                <time dateTime={blog.date} className="">
+                    {format(parseISO(blog.date), "LLLL d, yyyy")}
+                </time>
+                ·<span className="">{blog.reading_time} min read</span>
+            </div>
             <div>{blog.description}</div>
         </Link>
     );
