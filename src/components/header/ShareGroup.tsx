@@ -125,7 +125,7 @@ export default function ShareGroup({
                 </button>
                 {shareItems.map((item) => {
                     return (
-                        <Link href={item.href} target="_blank">
+                        <Link href={item.href} target="_blank" key={item.name}>
                             <button className="py-2 px-5 w-full hover:bg-neutral-300 hover:dark:bg-neutral-800 flex items-center gap-2 ">
                                 <div
                                     className={`p-[5px] rounded-full text-white`}
