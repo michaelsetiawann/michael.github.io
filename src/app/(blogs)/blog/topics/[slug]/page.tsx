@@ -53,7 +53,7 @@ export default function Page({ params }: Props) {
     return (
         <div className="w-full mx-auto md:w-[650px] ">
             <header className="flex flex-col gap-2">
-                <span className="text-xl font-semibold">Blog's Topic:</span>
+                <span className="text-xl font-semibold">Blog&apos;s Topic:</span>
                 <h1 className=" font-bold text-5xl">{topic?.name}</h1>
                 <span className="text-sm">{topic?.description}</span>
                 <div className="w-full flex">
