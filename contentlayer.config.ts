@@ -1,3 +1,5 @@
+import { flattenText } from "./src/utils/formater";
+import { blogCategoriesList } from "./src/constans/blog";
 import { estimateReadingTime } from "./src/utils/reading";
 import { defineDocumentType, makeSource } from "contentlayer/source-files";
 
@@ -31,6 +33,13 @@ const Blog = defineDocumentType(() => ({
             description: "The author of the blog",
             required: true,
         },
+        tag: {
+            type: "enum",
+            options: blogCategoriesList,
+            default: blogCategoriesList[0],
+            description: "The category of the blog",
+            required: true,
+        },
     },
     computedFields: {
         url: {
@@ -44,6 +53,10 @@ const Blog = defineDocumentType(() => ({
         reading_time: {
             type: "string",
             resolve: (doc) => estimateReadingTime(doc.body.raw),
+        },
+        flattened_tag: {
+            type: "string",
+            resolve: (doc) => flattenText(doc.tag.toLocaleLowerCase()),
         },
     },
 }));

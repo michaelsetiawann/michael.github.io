@@ -8,6 +8,7 @@ import puppeteer from "puppeteer";
 import Image from "next/image";
 import { hostName } from "@/constans/general";
 import ShareGroup from "@/components/header/ShareGroup";
+import Link from "next/link";
 
 type Props = {
     params: {
@@ -106,7 +107,13 @@ export default async function Page({ params }: Props) {
                 id="share_group"
                 className=" flex w-full justify-end items-center gap-2 not-prose"
             >
-                <span className="text-sm">{blog?.reading_time} min read</span>
+                <span className="text-sm">{blog?.reading_time} min read</span>·
+                <Link
+                    href={`/blog/tag/${blog?.flattened_tag}`}
+                    className="text-sm hover:underline"
+                >
+                    {blog?.tag}
+                </Link>
                 ·
                 <ShareGroup shareUrl={blogUrl} caption={shareQuote} />
             </div>
