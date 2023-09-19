@@ -56,7 +56,7 @@ export default function Page({ params }: Props) {
                 <span className="text-xl font-semibold">Blog&apos;s Topic:</span>
                 <h1 className=" font-bold text-5xl">{topic?.name}</h1>
                 <span className="text-sm">{topic?.description}</span>
-                <div className="w-full flex">
+                <div className="w-full flex flex-wrap">
                     <Link
                         href={`/blog/topics`}
                         className="flex gap-2 items-center rounded-full py-1 px-2 bg-neutral-300 dark:bg-neutral-700"
