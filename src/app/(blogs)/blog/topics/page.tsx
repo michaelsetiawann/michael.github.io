@@ -11,7 +11,7 @@ export default function Page() {
             <div className="mx-auto mt-16 flex flex-wrap gap-16 justify-center ">
                 {blogCategories.map((blog) => (
                     <Link
-                        href={`/blog/tag/${flattenText(
+                        href={`/blog/topics/${flattenText(
                             blog.name.toLocaleLowerCase()
                         )}`}
                         key={blog.name}
