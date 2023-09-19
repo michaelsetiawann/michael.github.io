@@ -6,7 +6,7 @@ import { AiOutlineCompass } from "react-icons/ai";
 function BlogCard({ blog }: { blog: Blog }) {
     return (
         <div>
-            <Link href={blog.url} passHref className="flex flex-col">
+            <Link href={blog.url} passHref className="flex flex-col gap-1">
                 <div className="text-3xl font-semibold hover:underline">
                     {blog.title}
                 </div>
@@ -17,7 +17,7 @@ function BlogCard({ blog }: { blog: Blog }) {
                 </div>
                 <div className="line-clamp-3">{blog.description}</div>
             </Link>
-            <div className="flex gap-2 items-center text-xs mt-3">
+            <div className="flex gap-2 items-center text-xs mt-4">
                 <Link
                     href={`blog/topics/${blog.flattened_tag}`}
                     className="py-1 px-2 rounded-full bg-neutral-300 dark:bg-neutral-700"

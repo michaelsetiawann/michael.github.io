@@ -30,7 +30,7 @@ function BlogCard({ blog }: { blog: Blog }) {
             href={`/blog/${blog.slug}`}
             className="w-[285px] bg-neutral-300 dark:bg-neutral-800 py-3 px-3 rounded-lg flex flex-col gap-2 hover:scale-105 transition-transform"
         >
-            <span className="text-xl font-semibold hover:underline">
+            <span className="text-xl font-semibold hover:underline line-clamp-3">
                 {blog.title}
             </span>
 
@@ -56,7 +56,7 @@ export default function Page({ params }: Props) {
                 <span className="text-xl font-semibold">Blog&apos;s Topic:</span>
                 <h1 className=" font-bold text-5xl">{topic?.name}</h1>
                 <span className="text-sm">{topic?.description}</span>
-                <div className="w-full flex flex-wrap">
+                <div className="w-full flex">
                     <Link
                         href={`/blog/topics`}
                         className="flex gap-2 items-center rounded-full py-1 px-2 bg-neutral-300 dark:bg-neutral-700"
@@ -65,7 +65,7 @@ export default function Page({ params }: Props) {
                     </Link>
                 </div>
             </header>
-            <div className="mt-10 w-full flex justify-center gap-14">
+            <div className="mt-10 w-full flex justify-center gap-14 flex-wrap">
                 {blogs.map((blog) => (
                     <BlogCard key={blog.title} blog={blog} />
                 ))}
