@@ -1,7 +1,9 @@
 import { flattenText } from "./src/utils/formater";
-import { blogCategoriesList } from "./src/constans/blog";
+import { blogTopics } from "./src/constans/blog";
 import { estimateReadingTime } from "./src/utils/reading";
 import { defineDocumentType, makeSource } from "contentlayer/source-files";
+
+const topicsList = blogTopics.map((blog) => blog.name);
 
 const Blog = defineDocumentType(() => ({
     name: "Blog",
@@ -35,8 +37,8 @@ const Blog = defineDocumentType(() => ({
         },
         tag: {
             type: "enum",
-            options: blogCategoriesList,
-            default: blogCategoriesList[0],
+            options: topicsList,
+            default: topicsList[0],
             description: "The category of the blog",
             required: true,
         },
