@@ -15,7 +15,7 @@ function BlogCard({ blog }: { blog: Blog }) {
                         {format(parseISO(blog.date), "LLLL d, yyyy")}
                     </time>
                 </div>
-                <div>{blog.description}</div>
+                <div className="line-clamp-2">{blog.description}</div>
             </Link>
             <div className="flex gap-2 items-center text-xs mt-3">
                 <Link
