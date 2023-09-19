@@ -113,7 +113,7 @@ export default async function Page({ params }: Props) {
     ];
     return (
         <article className="prose prose-sm md:prose-base lg:prose-lg prose-slate prose-i dark:prose-invert mx-auto prose-h1:my-1 prose-h1:font-bold prose-h2:mt-7 prose-h2:mb-2 prose-img:w-full md:prose-img:w-[500px] prose-video:w-full md:prose-video:w-[500px] prose-li:m-0 prose-code:text-base prose-code:whitespace-pre-wrap  ">
-            <div className="flex gap-3 items-center not-prose max-sm:text-sm mb-2">
+            <div className="flex gap-3 items-center not-prose max-sm:text-sm mb-8">
                 {routeNav.map((route, index) => (
                     <React.Fragment key={route.name}>
                         <Link
@@ -128,13 +128,14 @@ export default async function Page({ params }: Props) {
                     </React.Fragment>
                 ))}
             </div>
-            <h1>{blog?.title}</h1>
             <div className="flex items-center gap-2 my-2 text-xs text-gray-600 dark:text-neutral-400">
                 <time dateTime={blog?.date} className="">
                     {format(parseISO(blog?.date || ""), "LLLL d, yyyy")}
                 </time>
                 ·<span className="">{blog?.reading_time} min read</span>
             </div>
+            <h1>{blog?.title}</h1>
+
             <div
                 id="share_group"
                 className=" flex w-full justify-end items-center gap-2 not-prose"
