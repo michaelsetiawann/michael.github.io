@@ -65,7 +65,7 @@ export default function Page({ params }: Props) {
                     </Link>
                 </div>
             </header>
-            <div className="mt-10 w-full flex justify-center gap-14 flex-wrap">
+            <div className="mt-10 mx-auto w-fit grid grid-cols-1 min-[769px]:grid-cols-2 gap-8 flex-wrap">
                 {blogs.map((blog) => (
                     <BlogCard key={blog.title} blog={blog} />
                 ))}

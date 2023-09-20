@@ -13,7 +13,7 @@ export default function Page() {
             <header>
                 <h1 className="text-5xl font-bold text-center">Topics.</h1>
             </header>
-            <div className="mx-auto mt-16 flex flex-wrap gap-16 justify-center ">
+            <div className="mx-auto w-fit mt-16 grid grid-cols-1 sm:grid-cols-2 gap-8 justify-center">
                 {blogTopics.map((blog) => (
                     <Link
                         href={`/blog/topics/${blog.slug}`}
