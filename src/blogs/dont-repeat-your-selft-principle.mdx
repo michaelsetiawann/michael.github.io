@@ -1,0 +1,112 @@
+---
+title: "Programming Principle: DRY (Don't Repeat Yourself)"
+short_title: DRY (Don't Repeat Yourself) Principle
+date: 2023-09-20
+description: DRY stand for Don't Reat Yourself, it is one of fundamental programming principles. 
+author: Glenn Pray
+tag: "Software Engineering"
+---
+
+**DRY** (_Don't Repeat Yourself_) is a fundamental programming principles, this principle intend to reduce repeadly write the same code in the program. So it will create the code with _reuseability_, _maintainability_ and _reduce bug/error_ when code changes are needed. By using this principle it will help developer designing and writing efficient code.
+
+## DRY Key Points
+This principle have a few key points that developer have to understand:
+- **Code Reusebaility**: Allows the code to reused it in multiple places instead of copying the code. This is reduce redundacy and makes code more efficient.
+- **Maintainability**: More easier to change the code without changing each duplicate of code.
+- **Consistency**: Single source in DRY princile will be lead into consistency of behavior accross the application. It will help simplify debugging process.
+- **Code Readability**: DRY make code more consice without repeated code that will make the code longer and harder to read.
+- **Bug Reduction**: Repeated code will be create inconsistencies between duplicate code, change that make in one place may be forgotten ommitted in other places.
+
+## Implementing DRY Principle
+- **Identify Repeated code/data**  
+  First step you have to do is checking your code to identify redundant code or data and it is used in multiple places.
+- **Encapsulate Reusable Logic**  
+  If you found the redundant code or data you can simplify by creating reusable component to reduce repeated code or data by using this points belows:
+    - **_Use functions and methods_**
+     You can use functions and methods for spesific task that used in multiple places, and abstract it into function or method.
+    - **_Parameterize and generalize_**  
+     Create functions or methods by using parameters to making it generic, so it's mean creating function that adaptable and reusable for code flexibility and reusability.
+    - **_Centralize data and configuration_**  
+     Use centralize location to store data and configuration that can access when needed to avoid dulicating same data and configuration.
+- **Refactoring and Code Reviews**  
+  Regularly review the code and refactor the repeated code to apply the DRY principle.
+
+## DRY Implementation Example
+- **Calculating Area**  
+    _Without DRY:_  
+    ```
+    def calculate_rectangle_area(length, width):
+    return length * width
+
+    def calculate_circle_area(radius):
+        return 3.14 * radius * radius
+
+    def calculate_triangle_area(base, height):
+        return 0.5 * base * height
+    ```
+    _With DRY:_
+    ```
+    def calculate_area(shape, *args):
+        if shape == "rectangle":
+            return args[0] * args[1]
+        elif shape == "circle":
+            return 3.14 * args[0] * args[0]
+        elif shape == "triangle":
+            return 0.5 * args[0] * args[1]
+    ```
+- **Data Validation**  
+    _Without DRY:_
+    ```
+    def validate_username(username):
+        if len(username) < 5:
+            return False
+        if not username.isalnum():
+            return False
+        return True
+
+    def validate_email(email):
+        if "@" not in email:
+            return False
+        if "." not in email:
+            return False
+        return True
+    ```
+    _With DRY:_
+    ```
+    def validate_input(input_string, validation_rules):
+        return validation_rules(input_string)
+
+    # define reusable validation rules
+    def is_valid_username(username):
+        return len(username) >= 5 and username.isalnum()
+
+    def is_valid_email(email):
+        return "@" in email and "." in email
+
+    result_username = validate_input("johndoe", is_valid_username)
+    result_email = validate_input("johndoe@example.com", is_valid_email)
+    ```
+- **Configuration Settings**:  
+    _Without DRY:_
+    ```
+    database_host = "localhost"
+    database_port = 3000
+    database_username = "user"
+    database_password = "password"
+    ```
+    _With DRY:_
+    ```
+    # config.py
+    database = {
+        "host": "localhost",
+        "port": 5432,
+        "username": "user",
+        "password": "password"
+    }
+
+    # for using the config
+    from config import database
+    ```
+
+  ## Conclution
+  DRY principle is one of many fundamental principles that each developer have to understand and implement. It will create more maintainable, efficient, reliable software system and also reducing the risk of defects. 
