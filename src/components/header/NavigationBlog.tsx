@@ -5,6 +5,7 @@ import Link from "next/link";
 import { useEffect, useState } from "react";
 import Hamburger from "./Hamburger";
 import { navItemsBlog } from "@/constans/navigation";
+import { SearchBlog } from "../search/SearchBlog";
 
 export const NavigationBlog = () => {
     const [isOnTop, setIsOnTop] = useState(false);
@@ -55,7 +56,10 @@ export const NavigationBlog = () => {
                 >
                     glennprays;
                     <span className="font-light">
-                        |<span className="font-sans text-base sm:text-xl">Blog</span>
+                        |
+                        <span className="font-sans text-base sm:text-xl">
+                            Blog
+                        </span>
                     </span>
                 </Link>
                 <div
@@ -66,6 +70,9 @@ export const NavigationBlog = () => {
                             : "max-xl:h-0 max-xl:py-0")
                     }
                 >
+                    <div className="min-[921px]:hidden justify-self-center">
+                        <SearchBlog />
+                    </div>
                     {navItemsBlog.map((item) => (
                         <Link
                             key={item.name}
@@ -80,7 +87,12 @@ export const NavigationBlog = () => {
                     ))}
                 </div>
             </div>
-            <ThemeSwicher />
+            <div className="flex gap-4 items-center">
+                <div className="hidden min-[921px]:block">
+                    <SearchBlog />
+                </div>
+                <ThemeSwicher />
+            </div>
             <Hamburger
                 isOpen={isHamburgerOpen}
                 setIsOpen={setIsHamburgerOpen}

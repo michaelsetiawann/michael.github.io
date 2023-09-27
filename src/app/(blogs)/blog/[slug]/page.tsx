@@ -113,7 +113,7 @@ export default async function Page({ params }: Props) {
     ];
     return (
         <article className="prose prose-sm md:prose-base lg:prose-lg prose-slate prose-i dark:prose-invert mx-auto prose-h1:my-1 prose-h1:font-bold prose-h2:mt-7 prose-h2:mb-2 prose-img:w-full md:prose-img:w-[500px] prose-video:w-full md:prose-video:w-[500px] prose-li:m-0 prose-code:text-base prose-code:whitespace-pre-wrap  ">
-            <div className="flex gap-3 items-center not-prose max-sm:text-sm mb-8">
+            <div className="flex gap-3 items-center not-prose text-xs mb-4">
                 {routeNav.map((route, index) => (
                     <React.Fragment key={route.name}>
                         <Link
