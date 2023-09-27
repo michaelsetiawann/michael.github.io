@@ -27,7 +27,7 @@ export function SearchBlog() {
         <div className="relative">
             <input
                 type="text"
-                className="py-[2px] px-5 border dark:border-white border-black rounded-full w-[260px]"
+                className="py-[2px] px-5 border dark:border-white dark:bg-neutral-800 border-black rounded-full w-[260px]"
                 placeholder="Search Blog"
                 onChange={handleInput}
             />
