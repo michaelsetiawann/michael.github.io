@@ -70,7 +70,7 @@ export const NavigationBlog = () => {
                             : "max-xl:h-0 max-xl:py-0")
                     }
                 >
-                    <div className="min-[921px]:hidden justify-self-center">
+                    <div className="min-[921px]:hidden justify-self-center mx-auto text-[17px]">
                         <SearchBlog />
                     </div>
                     {navItemsBlog.map((item) => (
