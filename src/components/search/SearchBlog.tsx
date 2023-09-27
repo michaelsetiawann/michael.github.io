@@ -27,7 +27,7 @@ export function SearchBlog() {
         <div className="relative">
             <input
                 type="text"
-                className="py-[2px] px-5 border dark:border-white border-black rounded-full"
+                className="py-[2px] px-5 border dark:border-white border-black rounded-full w-[260px]"
                 placeholder="Search Blog"
                 onChange={handleInput}
             />
@@ -103,17 +103,15 @@ function SuggestionToggle({
             className={`bg-white dark:bg-neutral-800 mt-2 rounded-lg w-full overflow-hidden"
             }`}
         >
-            {loading
-                ? "Loading..."
-                : suggestions.length > 0
-                ? suggestions.map((blog, index) => (
-                      <SuggestionItem
-                          blog={blog}
-                          key={blog.url}
-                          index={index}
-                      />
-                  ))
-                : <span className="py-2 px-3">Data not found</span>}
+            {loading ? (
+                "Loading..."
+            ) : suggestions.length > 0 ? (
+                suggestions.map((blog, index) => (
+                    <SuggestionItem blog={blog} key={blog.url} index={index} />
+                ))
+            ) : (
+                <span className="py-2 px-3">Data not found</span>
+            )}
         </div>
     ) : null;
 }
