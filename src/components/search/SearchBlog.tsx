@@ -30,6 +30,7 @@ export function SearchBlog() {
                 className="py-[2px] px-5 border dark:border-white dark:bg-neutral-800 border-black rounded-full w-[260px]"
                 placeholder="Search Blog"
                 onChange={handleInput}
+                value={query}
             />
             <div className="w-full absolute max-h-[40vh] overflow-y-auto">
                 <SuggestionToggle open={open} setOpen={setOpen} query={query} />
@@ -92,7 +93,7 @@ function SuggestionToggle({
     const [loading, setLoading] = useState(false);
     function findSuggestions() {
         const suggestions = allBlogsData.filter((blog) =>
-            blog.title.toLowerCase().includes(query)
+            blog.title.toLowerCase().includes(query.toLowerCase())
         );
         setSuggestions(suggestions);
     }
