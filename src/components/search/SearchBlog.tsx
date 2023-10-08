@@ -14,14 +14,8 @@ export function SearchBlog() {
     const [open, setOpen] = useState(false);
     const [query, setQuery] = useState("");
 
-    const delayTime = 500;
-
-    const handleInputDebounced = debounced((value: string) => {
-        setQuery(value);
-    }, delayTime);
-
     function handleInput(e: ChangeEvent<HTMLInputElement>) {
-        handleInputDebounced(e.target.value);
+        setQuery(e.target.value);
     }
     return (
         <div className="relative">
@@ -71,12 +65,18 @@ function SuggestionToggle({
         };
     }, []);
 
+    const delayTime = 500;
+
+    const debouncedFingSuggestions = debounced(() => {
+        setOpen(true);
+        setLoading(true);
+        findSuggestions();
+        setLoading(false);
+    }, delayTime);
+
     useEffect(() => {
         if (query) {
-            setOpen(true);
-            setLoading(true);
-            findSuggestions();
-            setLoading(false);
+            debouncedFingSuggestions();
         } else {
             setOpen(false);
             setSuggestions([]);
