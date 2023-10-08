@@ -1,0 +1,33 @@
+---
+title: "Know more about Git Flow"
+short_title: Git Flow
+date: 2023-10-09
+description: Discover how to improve your development workflow and collaboration with the power of Git Flow. 
+author: Glenn Pray
+tag: "Software Engineering"
+---
+
+Git is a version control system that mosly used in software development and help developer to easily collaborate each other. Git Flow is workflow and branching models that used in git and this workflow has it's own practice.
+
+## Git Flow
+This is a workflow that used a set of branching convention that provides a structured approach.
+### 1. Primary Branch
+This flow have two primary branch in repository:
+- `master`  
+  This branch should always contains stable and production ready code.
+- `develop`  
+  This is a integration branch for on going development.
+### 2. Feature Branches
+`feature` branches used for new feature or enhancement. This is a branch(es) of the `develop` branch, so after the feature completly created it will merge into `develop` branch. Example of `feature` branch, this feature for uploading image so the name of the branch is `feature/image-uploader`.
+### 3. Release Branches
+This release branch created for preparing production release before merge into `master` branch. In this branch allow final testing, bug fixes, and release version number. After it ready this branch will merge into both `master` and `develop` branch. Example of `release` branch, `release/0.2.1`
+### 4. Hotfix Branches
+`hotfix` branch used to quickly address critical issue or bugs in production code, so it created from `master` branch. After the code fixed it will merge back into both`master` and `develop` branch. Example of this branch `hotfix/fix-authentification-issue`.
+
+![Git Flow](/images/blog/git-flow.png)
+
+This workflow provide flexibilty, you can simplified the branch structures just into `master`, `develop`, and `feature` branch.  
+
+## Conclution
+
+Git Flow provides a systematic approach to version control and collaboration, ensuring code stability, organized development, and effective release management. It's a valuable workflow model for projects that require structured development processes and well-defined release cycles.
