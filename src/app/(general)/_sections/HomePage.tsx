@@ -15,7 +15,7 @@ export default function HomePage() {
                 className='flex flex-col w-full xl:w-8/12'>
                 <motion.span
                     variants={Motions.fadeIn("left", "tween", 0.04, 0.4)}
-                    className='text-2xl text-blue-600 dark:text-blue-600 font-bold'>Hi!, I'm</motion.span>
+                    className='text-2xl text-blue-600 dark:text-blue-600 font-bold'>Hi!, I&apos;m</motion.span>
                 <motion.span
                     variants={Motions.fadeIn("up", "tween", 0.1, 1)}
                     className='text-7xl font-bold text-green-600 dark:text-purple-600'>Michael Setiawan</motion.span>
