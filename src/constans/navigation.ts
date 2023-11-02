@@ -22,10 +22,10 @@ export const navItems : NavItem[] = [
         name: "Contact",
         href: "/#contact"
     },
-    {
-        name: "Blog",
-        href: "/blog"
-    },
+    // {
+    //     name: "Blog",
+    //     href: "/blog"
+    // },
 ]
 
 export const navItemsBlog : NavItem[] = [
