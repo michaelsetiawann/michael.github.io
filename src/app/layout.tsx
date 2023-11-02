@@ -41,7 +41,7 @@ export default function RootLayout({
         <html lang="en">
             <body className={fontFamily.className}>
                 <Provider>
-                    <div className="bg-neutral-200 dark:bg-neutral-900">
+                    <div className="bg-neutral-0 dark:bg-neutral-900">
                         <div className="min-h-screen w-full overflow-x-hidden flex flex-col pt-24">
                             {children}
                         </div>

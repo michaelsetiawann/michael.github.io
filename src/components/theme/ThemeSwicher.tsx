@@ -17,9 +17,9 @@ export function ThemeSwicher() {
     const toggleSwitch = () => setTheme(isDark ? 'light' : 'dark');
 
     return (
-        <div id="theme-switcher" className={('w-9 sm:w-14 border-black bg-slate-400 rounded-full flex items-center cursor-pointer ' + (isDark ? 'justify-start' : 'justify-end'))} onClick={toggleSwitch}>
+        <div id="theme-switcher" className={('w-9 sm:w-14 border-black bg-slate-100 rounded-full flex items-center cursor-pointer ' + (isDark ? 'justify-start' : 'justify-end'))} onClick={toggleSwitch}>
             <motion.div
-                className="bg-sky-600 dark:bg-orange-600 w-7 h-7 max-sm:w-9 max-sm:h-9 rounded-full shadow-md flex items-center justify-center max-sm:text-2xl"
+                className="bg-green-600 dark:bg-purple-600 w-7 h-7 max-sm:w-9 max-sm:h-9 rounded-full shadow-md flex items-center justify-center max-sm:text-2xl"
                 layout
                 transition={spring}
             >

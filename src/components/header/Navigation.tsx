@@ -18,7 +18,7 @@ export const Navigation = () => {
         } else {
             document.body.style.overflowY = 'auto';
         }
-    }, [isHamburgerOpen])
+    }, [isHamburgerOpen]);
 
     useEffect(() => {
         const handleScroll = () => {
@@ -33,8 +33,8 @@ export const Navigation = () => {
         return () => {
             window.removeEventListener('scroll', handleScroll);
         }
+    }, [prevY]);
 
-    }, [prevY])
     return (
         <motion.nav
             initial={{ y: 0 }}
@@ -43,17 +43,23 @@ export const Navigation = () => {
                 type: 'tween'
             }}
             animate={{ y: isScrollingDown ? -100 : 0 }}
-            className={"bg-neutral-200 dark:bg-neutral-900 fixed top-0 left-0 w-full py-5 px-8 md:px-24 flex items-center justify-between z-50 bg-inherit select-none " + (isOnTop || isHamburgerOpen ? "opacity-100" : "opacity-90")}>
+            className={"text-white text-1xl bg-green-800  dark:bg-neutral-900 fixed top-0 left-0 w-full py-5 px-8 md:px-24 flex items-center justify-between z-50 bg-inherit select-none " + (isOnTop || isHamburgerOpen ? "bg-opacity-40 dark:bg-opacity-40" : "bg-opacity-40 dark:bg-opacity-40")}>
+            <ThemeSwicher /> 
             <Link id="logo" href='/' className="font-mono font-bold text-2xl select-none">
-                glennprays;
             </Link>
-            <div className={"flex justify-between items-center px-8 md:px-24 xl:px-0 w-7/12 max-xl:w-full text-xl max-xl:absolute max-xl:left-0 max-xl:top-0 max-xl:mt-[76px] transition-all max-xl:overflow-x-hidden max-xl:overflow-y-auto max-xl:bg-inherit max-xl:flex-col max-xl:items-start max-xl:justify-start max-xl:gap-4 " + (isHamburgerOpen ? "max-xl:py-5 max-xl:h-[calc(100vh-76px)]" : "max-xl:h-0 max-xl:py-0")} >
+            <div className="flex items-center">
                 {
-                    navItems.map((item) => <Link key={item.name} href={item.href} onClick={() => setIsHamburgerOpen(false)} className={"hover:text-cyan-600 dark:hover:text-amber-500 hover:underline font-semibold "}>{item.name}</Link>)
+                    navItems.map((item, index) => (
+                        <Link key={item.name} href={item.href} onClick={() => setIsHamburgerOpen(false)} className={"hover:text-blue-400 dark:hover-text-blue-600 hover:underline font-semibold " + (index < navItems.length - 1 ? "mr-10" : "")}>
+                            {item.name}
+                        </Link>
+                    ))
                 }
+                <Hamburger isOpen={isHamburgerOpen} setIsOpen={setIsHamburgerOpen} />
             </div>
-            <ThemeSwicher />
-            <Hamburger isOpen={isHamburgerOpen} setIsOpen={setIsHamburgerOpen} />
         </motion.nav>
-    )
+    );
 };
+
+
+
