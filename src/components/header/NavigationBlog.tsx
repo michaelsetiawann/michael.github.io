@@ -54,7 +54,6 @@ export const NavigationBlog = () => {
                     href="/blog"
                     className="font-mono font-bold text-lg sm:text-2xl select-none"
                 >
-                    glennprays;
                     <span className="font-light">
                         |
                         <span className="font-sans text-base sm:text-xl">

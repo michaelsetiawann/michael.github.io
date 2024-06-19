@@ -12,14 +12,14 @@ export const metadata: Metadata = {
     openGraph: {
         title: "This page cound not be found.",
         description: "This page cound not be found.",
-        siteName: "glennprays.tech",
+        siteName: "mike",
         images: notFoundImageURL.href,
     },
     twitter: {
         title: "This page cound not be found.",
         description: "This page cound not be found.",
         card: "summary_large_image",
-        site: "@glennprays",
+        site: "@mike",
         images: notFoundImageURL.href,
     }
 }

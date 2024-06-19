@@ -81,16 +81,6 @@ export const stackList : SkillItem[] = [
         alt: "Bootstrap Icon",
     },
     {
-        name: "Chakra UI",
-        icon: chakraui,
-        alt: "Chakra UI Icon",
-    },
-    {
-        name: "Contentlayer",
-        icon: contentlayer,
-        alt: "Contentlayer Icon",
-    },
-    {
         name: "Framer",
         icon: framer,
         alt: "Framer Motion Icon",

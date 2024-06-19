@@ -13,16 +13,17 @@ export const metadata = {
     metadataBase: new URL(hostName),
     title: {
         default: "Homepage",
-        template: `%s | glennprays;`,
+        template: `%s | michaels;`,
         keywords: [
-            "Glenn Pray Sabbatico Matthew",
-            "Glenn Pray Website",
-            "Glenn Pray Sagala",
-            "glennprays",
+            "Michael Setiawan",
+            "Michael Setiawan Website",
+            "MichaelS",
+            "Michael S ITHB",
+            "Michael S ITHB",
         ],
     },
     description:
-        "Hello, i'm Glenn Pray. Here, you will find a comprehensive collection of my professional journey, including my resume, portfolio, showcased projects, and blog posts.",
+        "Hi!, I'm Michael. On this platform, you'll discover a comprehensive overview of my professional journey, encompassing my CV, portfolio, highlighted projects.",
     viewport: {
         width: "device-width",
         height: "device-height",
@@ -42,7 +43,7 @@ export default function RootLayout({
             <body className={fontFamily.className}>
                 <Provider>
                     <div className="bg-neutral-0 dark:bg-neutral-900">
-                        <div className="min-h-screen w-full overflow-x-hidden flex flex-col pt-24">
+                        <div className="min-h-screen w-full overflow-x-hidden flex flex-col pt-24 px-4 sm:px-6 md:px-8 lg:px-12">
                             {children}
                         </div>
                         <Footer />

@@ -1,6 +1,5 @@
 import { contactList } from "@/constans/contact";
 import Link from "next/link";
-import { FaLinkedin } from "react-icons/fa6";
 
 export default function Contact() {
     return (
@@ -9,12 +8,12 @@ export default function Contact() {
             id="contact"
         >
             <h2 className="text-5xl font-bold">Contact</h2>
-            <div className="w-full mx-20">
-                <div className="mx-auto w-fit grid grid-cols-1 md:grid-cols-2 xl:grid-cols-3 gap-5">
+            <div className="w-full px-4">
+                <div className="mx-auto grid grid-cols-1 md:grid-cols-2 xl:grid-cols-3 gap-5">
                     {contactList.map((item, index) => {
                         const { name, username, url } = item;
                         return (
-                            <div key={name} className="flex w-[305px] py-2 px-2 justify-start gap-3 items-center dark:text-white border shadow border-slate-200 dark:border-zinc-800 rounded-lg bg-neutral-300 dark:bg-neutral-700 transition-transform ">
+                            <div key={name} className="flex w-full max-w-xs sm:max-w-sm md:max-w-md lg:max-w-lg xl:max-w-xl py-2 px-2 justify-start gap-3 items-center dark:text-white border shadow border-slate-200 dark:border-zinc-800 rounded-lg bg-neutral-300 dark:bg-neutral-700 transition-transform">
                                 <span className="text-[45px]">
                                     <item.icon />
                                 </span>
@@ -23,7 +22,7 @@ export default function Contact() {
                                         {name}
                                     </span>
                                     <Link
-                                        className="hover:underline" target="_blank"
+                                        className="hover:underline break-all" target="_blank"
                                         href={url}
                                     >
                                         {username}
