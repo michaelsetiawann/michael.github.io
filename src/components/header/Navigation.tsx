@@ -43,7 +43,7 @@ export const Navigation = () => {
                 type: 'tween'
             }}
             animate={{ y: isScrollingDown ? -100 : 0 }}
-            className={"text-white text-1xl bg-green-800  dark:bg-neutral-900 fixed top-0 left-0 w-full py-5 px-8 md:px-24 flex items-center justify-between z-50 bg-inherit select-none " + (isOnTop || isHamburgerOpen ? "bg-opacity-40 dark:bg-opacity-40" : "bg-opacity-40 dark:bg-opacity-40")}>
+            className={"text-black dark:text-white text-1xl bg-green-800 dark:bg-neutral-900 fixed top-0 left-0 w-full py-5 px-8 md:px-24 flex items-center justify-between z-50 bg-inherit select-none " + (isOnTop || isHamburgerOpen ? "bg-opacity-40 dark:bg-opacity-40" : "bg-opacity-40 dark:bg-opacity-40")}>
             <ThemeSwicher /> 
             <Link id="logo" href='/' className="font-mono font-bold text-2xl select-none">
             </Link>

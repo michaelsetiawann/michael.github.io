@@ -19,7 +19,7 @@ export function generateStaticParams() {
 export function generateMetadata({ params }: Props) {
     const topic = blogTopics.find((topic) => topic.slug === params.slug);
     const metadata: Metadata = {
-        title: topic?.name + " | glennprays;",
+        title: topic?.name + " | michaelsetiawan;",
         description: `My blogs talking about ${topic?.name}`,
     };
     return metadata;

@@ -14,25 +14,19 @@ export const contactList: ContactItem[] = [
     {
         name: "LinkedIn",
         icon: FaLinkedin,
-        username: "linkedin.com/in/glennprays",
-        url: "https://www.linkedin.com/in/glennprays/",
+        username: "linkedin.com/in/michaelsetiawan4/",
+        url: "https://www.linkedin.com/in/michaelsetiawan4/",
     },
     {
         name: "Email",
         icon: MdMail,
-        username: "glennsagala@gmail.com",
-        url: "mailto:glennsagala@gmail.com",
+        username: "michaelsetiawan686@gmail.com",
+        url: "mailto:michaelsetiawan686@gmail.com",
     },
     {
         name: "Github",
         icon: FaGithub,
-        username: "github.com/glennprays",
-        url: "https://github.com/glennprays",
-    },
-    {
-        name: "Codepen",
-        icon: SiCodepen,
-        username: "codepen.io/glennpray",
-        url: "https://codepen.io/glennpray",
+        username: "github.com/michaelsetiawann",
+        url: "https://github.com/michaelsetiawann",
     },
 ];
